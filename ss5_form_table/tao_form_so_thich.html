@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        body{
+            border: 15px solid #CAE5E8;
+        }
+        form{
+            display: flex;
+            text-align: start;
+            margin-left: 40px;
+        }
+        h2{
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 3px;
+            text-align: center;
+        }
+        .left{
+            text-align-last: end;
+            margin-left: 5px;
+            margin-top: 5px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            color: blue;
+        }
+        .button{
+            padding-bottom: 5px;
+        }
+        .button input{
+            border-left: 1px solid #DDDDDD;
+            border-top: 1px solid #DDDDDD;
+            border-bottom: 2px solid black;
+            border-right: 2px solid black;
+        }
+        .right{
+            margin-top: 5px;
+        }
+        .right input[type=text]{
+            margin-bottom: 15px ;
+            border-left: 2px solid black;
+            border-top: 2px solid black;
+            border-bottom: 1px solid #DDDDDD;
+            border-right: 1px solid #DDDDDD;
+        }
+        .right input[type=checkbox]{
+            margin-top: 5px;
+            justify-content: end;
+        }
+        .right .hobby{
+            color: orange;
+        }
+        .right .button{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h2>SỞ THÍCH CỦA BẠN</h2>
+<form>
+
+    <div class="left">
+        <label for="name">Họ và tên</label> <br> <br>
+        <label for="email">Email</label> <br> <br>
+        <label for="hobby">Sở thích</label>
+    </div>
+
+    <div class="right">
+        <div class="hobby">
+            <input type="text" id="name" name="name" size="23">  <br>
+            <input type="text" id="email" name="email" size="14"> <br>
+            <input type="checkbox" id="hobby" name="hobby" checked> Thể thao
+            <input type="checkbox" id="hobby" name="hobby"> Âm nhạc
+            <input type="checkbox" id="hobby" name="hobby"> Đọc sách <br>
+            <input type="checkbox" id="hobby" name="hobby"> Lướt web
+            <input type="checkbox" id="hobby" name="hobby"> Chơi game
+            <input type="checkbox" id="hobby" name="hobby"> Điện ảnh <br>
+            <input type="checkbox" id="hobby" name="hobby"> Du lịch <br>
+
+
+        </div>
+        <div class="button">
+            <input type="Submit" value="Gửi thông tin">
+            <input type="reset" value="Nhập lại">
+        </div>
+    </div>
+</form>
+</body>
+</html>

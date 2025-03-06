@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        background-color: #fffda9;
+
+    }
+    .top {
+        color: #244ffa;
+        margin-top: -17px;
+        margin-bottom: -13px;
+        margin-right : 1px;
+        margin-left: 5px;
+        background-color: #d4fdd6 ;
+        color: #244ffa;
+    }
+    .bottom{
+        display: flex;
+    }
+    .bottom label{
+        color: #244ffa;
+    }
+    .left{
+        display: block;
+        padding-left: 5px;
+        padding-right: 20px;
+    }
+    .left label{
+        display: block;
+    }
+    .right input[type=text]{
+        display: block;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-bottom: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+    }
+    .radio{
+        padding-bottom: 5px;
+    }
+    .textarea{
+        padding-bottom: 5px;
+    }
+    .select {
+        padding-bottom: 5px;
+    }
+    textarea{
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-bottom: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+    }
+    .button {
+        padding-bottom: 5px;
+    }
+    .button input{
+        background-color: #dcd9d2;
+        border-left: 2px solid #DDDDDD;
+        border-top: 2px solid #DDDDDD;
+        border-bottom: 2px solid black;
+        border-right: 2px solid black;
+    }
+
+
+</style>
+<body>
+
+<form>
+    <div class="top">
+        <h2 class="title">ĐĂNG KÝ HỌC VIÊN</h2>
+    </div>
+    <div class="bottom">
+        <div class="left">
+            <label for="">Họ và tên</label> <br>
+            <label for="">Ngày sinh</label> <br>
+            <label for="">Giới tính</label> <br>
+            <label for="">Địa chỉ</label> <br>
+            <label for="">Lớp</label> <br>
+            <label for="">Email</label> <br>
+            <label for="">Điện thoại</label> <br>
+        </div>
+        <div class="right">
+            <input type="text"> <br>
+            <input type="text"> <br>
+            <div class="radio">
+                <input type="radio" value=""> Nam
+                <input type="radio" value=""> Nữ <br>
+            </div>
+            <div class="textarea">
+                <textarea cols="25" rows="3"></textarea>
+            </div>
+
+            <div class="select">
+                <select>
+                    <option selected>-Chọn lớp-</option>
+                    <option value="">C001</option>
+                    <option value="">C002</option>
+                    <option value="">C003</option>
+                </select>
+            </div>
+            <input type="text"> <br>
+            <input type="text"> <br>
+            <div class="button">
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </div>
+
+        </div>
+    </div>
+
+
+</form>
+</body>
+</html>
