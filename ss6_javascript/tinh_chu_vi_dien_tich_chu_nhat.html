@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        input{
+            margin-left: 10px;
+        }
+        button{
+            margin-left: 10px;
+        }
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form>
+<!--    <h3>Tính Diện tích chữ nhật</h3>-->
+<!--    <button onclick="tinhChuVi()">Tính Chu Vi</button> <br> <br>-->
+<!--    <button onclick="tinhDienTich()">Tính Diện Tích</button> <br> <br>-->
+    <h3>Cho Hình Chữ Nhật</h3>
+    <label>Nhập chiều dài</label>
+     <input type="number" id="dai"> <br> <br>
+    <label>Nhập chiều dài</label>
+    <input type="number" id="rong"> <br> <br>
+    <label>Kết Qủa:</label>
+    <span id="ketqua"></span> <br> <br>
+    <button type="button" onclick="tinhChuVi()">Tính Chu Vi</button>
+    <button type="button" onclick="tinhDienTich()">Tính Diện Tích</button>
+</form>
+</body>
+</html>
+<script>
+    <!--   Cách1 -->
+    // function tinhChuVi(){
+    //     let a = +prompt("Nhập giá trị chiều dài");
+    //     let b = +prompt("Nhập giá trị chiều rộng");
+    //     let C = (a+b)*2;
+    //     alert(C);
+    // }
+    // function tinhDienTich(){
+    //     let a = +prompt("Nhập giá trị chiều dài");
+    //     let b = +prompt("Nhập giá trị chiều rộng");
+    //     let D = a*b;
+    //     alert(D);
+    // }
+    <!--   Cách 2 -->
+    function tinhChuVi(){
+        let a = +document.getElementById("dai").value;
+        let b = +document.getElementById("rong").value;
+        let C = (a+b)*2;
+        document.getElementById("ketqua").innerText =  C;
+    }
+    function tinhDienTich(){
+        let a = +document.getElementById("dai").value;
+        let b = +document.getElementById("rong").value;
+        let D = a*b;
+        document.getElementById("ketqua").innerText =  D;
+    }
+</script>
