@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .header{
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+            font-size: 12px;
+            border-bottom: 1px dotted #cccccc;
+            margin-bottom: 5px;
+        }
+        label{
+            font-family: ;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        textarea{
+            width: 100%;
+            height: 100px;
+            margin: 5px 0;
+            border-top: 1px solid;
+            border-bottom: 1px solid #cccccc;
+            border-left: 1px solid #cccccc;
+            border-right: 1px solid #cccccc;
+        }
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 5px;
+            font-size: 11px;
+        }
+        tr:nth-child(odd){
+            background-color: #e6e6e6;
+        }
+        td:nth-child(1){
+            font-weight: bold;
+        }
+        td:nth-child(n+2) {
+            text-align: center;
+            vertical-align: middle;
+            width: 15%;
+            font-size: 11px;
+        }
+        th:nth-child(n+2) {
+            text-align: center;
+            vertical-align: middle;
+            width: 15%;
+            font-size: 13px;
+        }
+       tr:nth-child(n+2):hover{
+           background-color: #fff7c0;
+       }
+        .main-content:focus-within {
+            background-color: #fff7c0;
+        }
+        .main-content-features:focus-within {
+            background-color: #fff7c0;
+            padding-bottom: 10px;
+        }
+        .main-content-features input{
+            border-top: 1px solid;
+            border-bottom: 1px solid #cccccc;
+            border-left: 1px solid #cccccc;
+            border-right: 1px solid #cccccc;
+        }
+        .main-content:focus-within .note label{
+            display: block;
+            background-color: transparent;
+        }
+        .main-content:has(input[type="radio"]:focus) {
+            background-color: #fff7c0;
+        }
+
+        input[type="text"]:focus {
+            background-color: transparent !important;
+        }
+        .note{
+            margin-left: 25px;
+            padding-right: 10px;
+            display: none;
+        }
+        input[type="text"]:focus + .note {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h2>Market Research Survey</h2>
+    <p>Please take a few monments to complete this satisfaction survey.</p>
+</div>
+<form>
+        <div  class="main-content">
+            <label>What is your age range?</label> <br>
+            <select style="width: 50%;">
+                <option name="age" value="" selected>18-24</option>
+                <option name="age" value="">25-34</option>
+                <option name="age" value="">35-50</option>
+                <option name="age" value="">50+</option>
+            </select>
+        </div>
+        <br>
+        <div class="main-content">
+            <label >What is your yearly income range?</label> <br>
+            <select style="width: 50%;">
+                <option value="" selected>$0 - $25,000</option>
+                <option value="">$25,001 - $50,000</option>
+                <option value="">$50,001 - $100,000</option>
+                <option value="">#100,000+</option>
+            </select>
+        </div>
+        <br>
+        <div class="main-content">
+            <label for="name">What is your yearly income range?</label> <br>
+            <input type="radio" name="gender"> Male<br>
+            <input type="radio" name="gender"> Female<br>
+            <input type="radio" name="gender"> Nonbinary<br>
+            <input type="radio" name="gender"> Other<br>
+            <input style="margin-left: 25px" type="text" size="15">
+            <div class="note">
+                <label>Maximum of 250 characters.</label>
+                <label>Currently Used: 0 characters.</label>
+            </div>
+        </div>
+        <br>
+        <div class="main-content">
+            <label>Which of the following products have your purchased in the last 2 months. Please check all that apply.</label> <br>
+            <input type="checkbox"> Product 1<br>
+            <input type="checkbox"> Product 2<br>
+            <input type="checkbox"> Product 3<br>
+        </div>
+        <br>
+        <div class="main-content">
+            <label for="name">How often would you use our new product?</label> <br>
+            <input type="radio" name="use"> Daily<br>
+            <input type="radio" name="use"> Weekly<br>
+            <input type="radio" name="use"> Monthly<br>
+        </div>
+        <br>
+        <div class="main-content-features">
+            <label >What would you pay for the new product?</label> <br>
+            <div>
+                <label >$</label>
+                <input type="text" size="6">
+                <label >.</label>
+                <input type="text" size="1"> <br>
+                <label style="padding: 10px" >Dollars</label>
+                <label style="padding: 35px" >Cents</label>
+            </div>
+        </div>
+        <br>
+        <div class="main-content">
+            <label for="feature">What features would you like to see in the new product.</label> <br>
+            <textarea id="feature"></textarea>
+        </div>
+        <br>
+        <div >
+            <label for="feature">Please rate your level of agreement with the following statments.</label> <br>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Strongly Disagree</th>
+                    <th>Disagree</th>
+                    <th>Agree</th>
+                    <th>Strongly Agree
+                    </th>
+                </tr>
+                <tr>
+                    <td>Our products are priced fairly.</td>
+                    <td>
+                        <input type="radio" value="1">
+                        <span style="display: block; text-align: center;">1</span>
+                    </td>
+                    <td>
+                        <input type="radio" value="2">
+                        <span style="display: block; text-align: center;">2</span>
+                    </td>
+                    <td>
+                        <input type="radio" value="3">
+                        <span style="display: block; text-align: center;">3</span>
+                    </td>
+                    <td>
+                        <input type="radio" value="4">
+                        <span style="display: block; text-align: center;">4</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Our products are high quality.</td>
+                    <td>
+                        <input type="radio" value="1">
+                        <span style="display: block; text-align: center;">1</span>
+                    </td>
+                    <td>
+                        <input type="radio" value="2">
+                        <span style="display: block; text-align: center;">2</span>
+                    </td>
+                    <td>
+                        <input type="radio" value="3">
+                        <span style="display: block; text-align: center;">3</span>
+                    </td>
+                    <td>
+                        <input type="radio" value="4">
+                        <span style="display: block; text-align: center;">4</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>You would recommend our product to a friend or coworker.</td>
+                    <td>
+                        <input type="radio" value="1">
+                        <span style="display: block; text-align: center;">1</span>
+                    </td>
+                    <td>
+                        <input type="radio" value="2">
+                        <span style="display: block; text-align: center;">2</span>
+                    </td>
+                    <td>
+                        <input type="radio" value="3">
+                        <span style="display: block; text-align: center;">3</span>
+                    </td>
+                    <td>
+                        <input type="radio" value="4">
+                        <span style="display: block; text-align: center; margin-top: 10px">4</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+</form>
+</body>
+</html>
