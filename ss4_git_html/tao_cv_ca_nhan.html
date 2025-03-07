@@ -19,6 +19,14 @@
         .vid1 {
             margin-top: 30px;
         }
+        div{
+            display: flex;
+            margin-left: 30px;
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: -30px;
+            font-weight: initial;
+        }
     </style>
 </head>
 <body>
@@ -27,16 +35,16 @@
 <h4><p>Họ và tên: <p style="padding-left: 44px">Nguyễn Văn A</p></h4>
 <h4 style="margin-top: -35px"><p>Quê quán:</p> <p style="padding-left: 44px">Hà Nội</p></h4>
 <h4>Trình độ <br> học vấn:<p style="padding-left: 55px; margin-top: 10px">Đại học</p></h4>
-<h4 class="vid">Video giới <br>thiệu:
+<div class="vid">Video giới <br>thiệu:
     <video style="padding-left: 45px ; height: 200px; width:350px" controls autoplay muted loop>
         <source src="video.mp4" type="video/mp4">
     </video>
-</h4>
+</div>
 
-<h4 class="vid1" style="display: flex"><p>Ghi âm<br>(nếu có):</p>
+<div class="vid1" ><p>Ghi âm<br>(nếu có):</p>
     <audio style="padding-left: 50px; margin-top: 5px" controls>
         <source src="audio.mp3">
     </audio>
-</h4>
+</div>
 </body>
 </html>
