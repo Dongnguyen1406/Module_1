@@ -22,8 +22,13 @@
             padding-right: 10px;
             text-align: end;
         }
+
+        /*hàng ô lẻ - cột ô lẻ tô màu trắng*/
         tr:nth-child(odd) td:nth-child(odd):nth-child(n+2) {
             background-color: white;
+        }
+        tr:nth-child(odd) td:nth-child(even):nth-child(n+2) {
+            background-color: black;
         }
         tr:nth-child(even) td:nth-child(even):nth-child(n+2) {
             background-color: white;
@@ -31,9 +36,10 @@
         tr:nth-child(even) td:nth-child(odd):nth-child(n+2) {
             background-color: black;
         }
-        tr:nth-child(odd) td:nth-child(even):nth-child(n+2) {
-            background-color: black;
-        }
+        /*hàng ô lẻ - cột ô lẻ tô màu đen*/
+
+
+
         body{
             background-color: #ffb300;
             width: 100%;

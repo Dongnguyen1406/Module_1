@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+   <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+<body>
+<div class="bai_1">
+    <form method="post" action="">
+        <h2>Điểm Sinh Viên</h2>
+        <div class="content">
+            <div class="left">
+                <label >Điểm Vật Lý</label>
+                <label >Điểm Hóa Học</label>
+                <label >Điểm Sinh Học</label>
+            </div>
+            <div class="right">
+                <input type="text" name="diem" id="vatly" required> <br>
+                <input type="text" name="diem" id="hoahoc" required> <br>
+                <input type="text" name="diem" id="sinhhoc" required>
+            </div>
+        </div>
+        <div>
+            <label>Kết quả trung bình: <span id="ketquatrungbinh"></span> </label> <br>
+            <label>Kết quả tổng: <span id="ketquatong"></span> </label>
+        </div>
+        <br>
+        <div>
+            <button type="button" onclick="tinhTrungBinh()">Tính</button>
+            <button type="reset" value="">Nhập lại</button>
+        </div>
+    </form>
+</div> <br>
+<div class="bai_2">
+    <form>
+        <h2>Chuyển Đổi Độ</h2>
+        <div class="content">
+            <div class="left">
+                <label>Độ C</label>
+            </div>
+            <div class="right">
+                <input type="text" name="nhietdo" id="doC" required>
+            </div>
+        </div>
+        <label>Độ F:<span id="doF"></span> </label> <br><br>
+        <div>
+            <button type="button" onclick="chuyenDoiNhietDo()">Chuyển đổi</button>
+            <button type="reset" value="">Nhập lại</button>
+        </div>
+    </form>
+</div> <br>
+<div class="bai_3">
+    <form>
+        <h2>Tính Diện Tích Hình Tròn</h2>
+        <div class="content">
+            <div class="left">
+                <label>Bán kính</label>
+            </div>
+            <div class="right">
+                <input type="text" id="bankinh" required>
+            </div>
+        </div>
+        <label>Diện tích là: <span id="ketquadientich"></span></label> <br><br>
+        <div>
+            <button type="button" onclick="dienTichHinhTron()">Tính</button>
+            <button type="reset" value="">Nhập lại</button>
+        </div>
+    </form>
+</div> <br>
+
+<div class="bai_4">
+    <form>
+        <h2>Tính Chu Vi Hình Tròn</h2>
+        <div class="content">
+            <div class="left">
+                <label>Đường Kính</label>
+            </div>
+            <div class="right">
+                <input type="text" id="duongkinh" required>
+            </div>
+        </div>
+        <label>Chu vi là: <span id="ketquachuvi"></span></label> <br><br>
+        <div>
+            <button type="button" onclick="chuViHinhTron()">Tính</button>
+            <button type="reset" value="">Nhập lại</button>
+        </div>
+    </form>
+</div> <br>
+</body>
+</html>
+<script src="JavaScript/index.js"></script>

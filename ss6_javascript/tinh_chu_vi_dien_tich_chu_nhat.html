@@ -18,46 +18,34 @@
 </head>
 <body>
 <form>
-<!--    <h3>Tính Diện tích chữ nhật</h3>-->
-<!--    <button onclick="tinhChuVi()">Tính Chu Vi</button> <br> <br>-->
-<!--    <button onclick="tinhDienTich()">Tính Diện Tích</button> <br> <br>-->
     <h3>Cho Hình Chữ Nhật</h3>
     <label>Nhập chiều dài</label>
      <input type="number" id="dai"> <br> <br>
     <label>Nhập chiều dài</label>
     <input type="number" id="rong"> <br> <br>
-    <label>Kết Qủa:</label>
-    <span id="ketqua"></span> <br> <br>
-    <button type="button" onclick="tinhChuVi()">Tính Chu Vi</button>
-    <button type="button" onclick="tinhDienTich()">Tính Diện Tích</button>
+    <label>Kết Qủa chu vi:</label>
+    <span id="ketquachuvi"></span> <br>
+    <label>Kết Qủa diện tích:</label>
+    <span id="ketquadientich"></span>
+    <br> <br>
+    <button type="button" onclick="tinhChuViDienTich()">Tính Chu Vi</button>
+<!--    <button type="button" onclick="tinhDienTich()">Tính Diện Tích</button>-->
 </form>
 </body>
 </html>
 <script>
-    <!--   Cách1 -->
-    // function tinhChuVi(){
-    //     let a = +prompt("Nhập giá trị chiều dài");
-    //     let b = +prompt("Nhập giá trị chiều rộng");
-    //     let C = (a+b)*2;
-    //     alert(C);
-    // }
+    function tinhChuViDienTich(){
+        let chieudai = +document.getElementById("dai").value;
+        let chieurong = +document.getElementById("rong").value;
+        let chuvi = (chieudai+chieurong)*2;
+        let dientich = chieudai*chieurong;
+        document.getElementById("ketquachuvi").innerText =  chuvi;
+        document.getElementById("ketquadientich").innerText =  dientich;
+    }
     // function tinhDienTich(){
-    //     let a = +prompt("Nhập giá trị chiều dài");
-    //     let b = +prompt("Nhập giá trị chiều rộng");
-    //     let D = a*b;
-    //     alert(D);
+    //     let chieudai = +document.getElementById("dai").value;
+    //     let chieurong = +document.getElementById("rong").value;
+    //     let dientich = chieudai*chieurong;
+    //     document.getElementById("ketqua").innerText =  dientich;
     // }
-    <!--   Cách 2 -->
-    function tinhChuVi(){
-        let a = +document.getElementById("dai").value;
-        let b = +document.getElementById("rong").value;
-        let C = (a+b)*2;
-        document.getElementById("ketqua").innerText =  C;
-    }
-    function tinhDienTich(){
-        let a = +document.getElementById("dai").value;
-        let b = +document.getElementById("rong").value;
-        let D = a*b;
-        document.getElementById("ketqua").innerText =  D;
-    }
 </script>
