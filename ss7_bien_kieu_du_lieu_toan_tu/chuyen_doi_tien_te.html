@@ -6,20 +6,104 @@
     <title>Document</title>
     <style>
         form{
+            display: flex;
+            justify-content: center;
+        }
+        form label{
             text-align: center;
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
         }
-        div label{
-            padding-left: 100px;
+        form span{
+            color: #0433ff;
+            font-weight: bold;
         }
+        div{
+            margin: 50px;
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+        div input{
+            width: 150px;
+            height: 25px;
+        }
+        select {
+            width: 120px;
+            height: 30px;
+        }
+        button{
+            background-color: #8f82cf;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover{
+            border: 1px solid aqua;
+        }
+
+
     </style>
 </head>
 <body>
     <form>
-        <div style="display: flex; justify-content: center;">
+        <div>
             <label>Amount</label> <br>
-            <label>Amount</label> <br>
-            <label>Amount</label> <br>
+            <input type="number" id="amount"> <br> <br>
+            <span style="padding-left: 10px" id="result"></span>
+        </div>
+        <div>
+            <label>From Currency</label> <br>
+            <select id="formcurrency">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+        <div>
+            <label>To Currency</label> <br>
+            <select id="tocurrency">
+                <option value="USD">USD</option>
+                <option value="VND">VND</option>
+            </select>
+        </div>
+        <div>
+            <br><br>
+            <button type="button" onclick="convertCurrency()">Convert</button>
         </div>
     </form>
 </body>
+<script>
+    // dùng const vì là khai báo biến bất biến
+    const exchangeRates = {
+        "VND": {"USD": 0.000043},
+        "USD": {"VND": 23200},
+    };
+
+    function convertCurrency(){
+        let Amount = parseFloat(document.getElementById("amount").value);
+        let fromCurrency = document.getElementById("formcurrency").value;
+        let toCurrency = document.getElementById("tocurrency").value;
+        let Result = document.getElementById("result");
+
+        if  (isNaN(Amount) || Amount <= 0){
+            Result.innerHTML = "Vui lòng nhập số tiền hợp lệ !";
+            return;
+        }
+        if(fromCurrency === toCurrency){
+            Result.innerHTML = `Kết quả: ${Amount} ${toCurrency}`;
+        }
+
+        const rate = exchangeRates[fromCurrency]?.[toCurrency];
+        if(rate){
+            const convertedAmount = (Amount * rate).toFixed(2); // phương thức định dạng số thâp phân với 2 chữ số sau dấu phẩy
+            Result.innerHTML = `Kết quả: ${convertedAmount} ${toCurrency}`;
+        } else{
+            Result.innerHTML = "Không có tỷ giá cho cặp tiền tệ này !";
+        }
+    };
+</script>
 </html>

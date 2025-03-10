@@ -14,7 +14,11 @@
     let F = 9*(C/5)+32;
     document.getElementById("doF").innerText= " " + F;
 
+
 }
+    function nhapLai(){
+    document.getElementById("doF").value= "";
+    }
 
     function dienTichHinhTron(){
     let r = +document.getElementById("bankinh").value;

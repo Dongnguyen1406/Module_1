@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        button{
+
+        }
+        .top{
+            display: flex;
+        }
+        input{
+            width: 100%;
+        }
+        .top button{
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            width: 90px;
+            height: 30px;
+            margin: 5px;: ;
+        }
+        fieldset{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <input style="margin-right: 5px; height: 25px" id="display">
+            <div class="top">
+                <button>Rad</button>
+                <button>o</button>
+                <button>x!</button>
+                <button>(</button>
+                <button>)</button>
+                <button type="button" onclick="appendValue('%')">%</button>
+                <button type="button" onclick="clearDisplay()">AC</button>
+            </div>
+            <div class="top">
+                <button>Inv</button>
+                <button type="button" onclick="calculateTrig('sin')">sin</button>
+                <button>In</button>
+                <button type="button" onclick="appendValue('7')">7</button>
+                <button type="button" onclick="appendValue('8')">8</button>
+                <button type="button" onclick="appendValue('9')">9</button>
+                <button type="button" onclick="appendValue('/')">÷</button>
+            </div>
+            <div class="top">
+                <button>π</button>
+                <button type="button" onclick="calculateTrig('cos')">cos</button>
+                <button type="button" onclick="calculateLog()">log</button>
+                <button type="button" onclick="appendValue('4')">4</button>
+                <button type="button" onclick="appendValue('5')">5</button>
+                <button type="button" onclick="appendValue('6')">6</button>
+                <button type="button" onclick="appendValue('*')">X</button>
+            </div>
+
+            <div class="top">
+                <button>e</button>
+                <button type="button" onclick="calculateTrig('tan')">tan</button>
+                <button type="button" onclick="calculateSqr()">√</button>
+                <button type="button" onclick="appendValue('1')">1</button>
+                <button type="button" onclick="appendValue('2')">2</button>
+                <button type="button" onclick="appendValue('3')">3</button>
+                <button type="button" onclick="appendValue('-')">-</button>
+            </div>
+
+            <div class="top">
+                <button>Ans</button>
+                <button>EXP</button>
+                <button><sup>x<sup>y</sup></button>
+                <button type="button" onclick="appendValue('0')">0</button>
+                <button>.</button>
+                <button type="button" onclick="calculate()">=</button>
+                <button type="button" onclick="appendValue('+')">+</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+<script>
+    function appendValue(value){
+        document.getElementById("display").value += value;
+    }
+    function clearDisplay() {
+        document.getElementById("display").value = "";
+    }
+    function calculate(){
+       let display = document.getElementById("display");
+       let expression = display.value; // chuỗi chứa biểu thức toán học
+       if (expression){ // hàm eval thực thi chuỗi biểu thức đó
+           display.value = eval(expression); // gán kết quả cho display
+       }
+    }
+    function calculateSqr(){
+        document.getElementById("display").value = Math.sqrt(eval(document.getElementById("display").value));
+                                               // Math.sqrt tính căn bậc hai của giá trị từ hàm eval -
+                                               // eval(document.getElementById("display").value) chuyển đổi chuỗi nhập thành biểu thức js và tính
+    }
+    function calculateTrig(func){
+        let value = eval(document.getElementById("display").value);
+        if (func === "sin"){
+            document.getElementById("display").value = Math.sin(value * Math.PI / 180);
+        } else if (func === "cos"){
+            document.getElementById("display").value = Math.cos(value * Math.PI / 180);
+        } else if (func === "tan"){
+            document.getElementById("display").value = Math.tan(value * Math.PI / 180);
+        }
+    }
+
+    function calculateLog(){
+        document.getElementById("display").value = Math.log10(eval(document.getElementById("display").value));
+    }
+
+
+
+
+
+</script>
+</html>
