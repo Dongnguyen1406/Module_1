@@ -45,8 +45,6 @@
         button:hover{
             border: 1px solid aqua;
         }
-
-
     </style>
 </head>
 <body>
@@ -84,25 +82,25 @@
     };
 
     function convertCurrency(){
-        let Amount = parseFloat(document.getElementById("amount").value);
+        let amount = parseFloat(document.getElementById("amount").value);
         let fromCurrency = document.getElementById("formcurrency").value;
         let toCurrency = document.getElementById("tocurrency").value;
-        let Result = document.getElementById("result");
+        let result = document.getElementById("result");
 
-        if  (isNaN(Amount) || Amount <= 0){
-            Result.innerHTML = "Vui lòng nhập số tiền hợp lệ !";
+        if  (isNaN(amount) || amount <= 0){
+            result.innerHTML = "Vui lòng nhập số tiền hợp lệ !";
             return;
         }
         if(fromCurrency === toCurrency){
-            Result.innerHTML = `Kết quả: ${Amount} ${toCurrency}`;
+            result.innerHTML = `Kết quả: ${amount} ${toCurrency}`;
         }
 
         const rate = exchangeRates[fromCurrency]?.[toCurrency];
         if(rate){
-            const convertedAmount = (Amount * rate).toFixed(2); // phương thức định dạng số thâp phân với 2 chữ số sau dấu phẩy
-            Result.innerHTML = `Kết quả: ${convertedAmount} ${toCurrency}`;
+            const convertedAmount = (amount * rate).toFixed(2); // phương thức định dạng số thâp phân với 2 chữ số sau dấu phẩy
+            result.innerHTML = `Kết quả: ${convertedAmount} ${toCurrency}`;
         } else{
-            Result.innerHTML = "Không có tỷ giá cho cặp tiền tệ này !";
+            result.innerHTML = "Không có tỷ giá cho cặp tiền tệ này !";
         }
     };
 </script>
