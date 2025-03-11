@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <h1>Tính chỉ số cân nặng</h1>
+    <label for="cannang">Nhập cân nặng: (kg)</label>
+    <input type="number" id="cannang" step="0.1"> <br> <br>
+    <label for="chieucao">Nhập chiều cao: (m)</label>
+    <input type="number" id="chieucao" step="0.01"> <br> <br>
+    <button type="button" onclick="tinhCanNang()">Kiểm tra</button>
+    <h3 id="ketqua"></h3>
+</form>
+</body>
+<script>
+    function tinhCanNang(){
+        let canNang = parseFloat(document.getElementById('cannang').value);
+        let chieuCao = parseFloat(document.getElementById('chieucao').value) ;
+        if (isNaN(canNang) || isNaN(chieuCao) || canNang <= 0 || chieuCao <= 0){
+            document.getElementById("ketqua").innerText = "Nhập chỉ số hợp lệ!";
+            return;
+        }
+
+        chiSoCanNang=canNang/(chieuCao*chieuCao);
+        tinhtrang="";
+        if(chiSoCanNang<18.5){
+            tinhtrang="Underweight";
+            // document.write("Underweight");
+        } else if (chiSoCanNang<25.0){
+            tinhtrang="Normal";
+            // document.write("Normal");
+        } else if (chiSoCanNang<30.0){
+            tinhtrang="Overweight";
+            // document.write("Overweight");
+        } else{
+            tinhtrang="Obese";
+        }
+        document.getElementById('ketqua').innerText=`Chỉ số BMI của bạn là ${chiSoCanNang.toFixed(2)} - ${tinhtrang}`;
+    }
+</script>
+</html>
