@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+</form>
+</body>
+<script>
+    let soTienBanDau = +prompt("Nhập số tiền ban đầu: ");
+    let laiSuat = +prompt("Nhập lãi suất hàng tháng: ");
+    let soThang = +prompt("Nhập số tháng đã gửi tiền: ");
+    let laiSuatThapPhan = laiSuat/100;
+    let soTienHienTai = soTienBanDau * Math.pow(1+laiSuatThapPhan, soThang); // Tính toán lũy thừa để áp dụng lãi kép
+    alert(`Số tiền sau ${soThang} tháng là: ${soTienHienTai.toLocaleString()} VND`);
+</script>
+</html>
