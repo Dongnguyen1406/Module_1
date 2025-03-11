@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+</form>
+</body>
+<script>
+    let soDienDaDung = +prompt("Nhap vao so dien ban da su dung ");
+    let tongGiaTien = 0;
+    if (soDienDaDung <= 50) {
+        tongGiaTien = soDienDaDung*1728;
+        alert(`So tien dien da dung ${tongGiaTien}`);
+    } else if (soDienDaDung <= 100) {
+        tongGiaTien = (50*1728) + (soDienDaDung - 50)*1786;
+        alert(`So tien dien da dung ${tongGiaTien}`);
+    } else if (soDienDaDung <= 200) {
+        tongGiaTien = (50*1728) + (50*1786) + (soDienDaDung - 100)*2074;
+        alert(`So tien dien da dung ${tongGiaTien}`);
+    } else if (soDienDaDung <= 300) {
+        tongGiaTien = (50*1728) + (50*1786) + (100*2074) + (soDienDaDung - 200)*2612;
+        alert(`So tien dien da dung ${tongGiaTien}`);
+    } else if (soDienDaDung <= 400) {
+        tongGiaTien = (50*1728) + (50*1786) + (100*2074) + (100*2612) + (soDienDaDung - 300)*2919;
+        alert(`So tien dien da dung ${tongGiaTien}`);
+    } else {
+        tongGiaTien = (50*1728) + (50*1786) + (100*2074) + (100*2612) + (100*2919) + (soDienDaDung - 400)*3015;
+        alert(`So tien dien da dung ${tongGiaTien}`);
+    }
+</script>
+</html>

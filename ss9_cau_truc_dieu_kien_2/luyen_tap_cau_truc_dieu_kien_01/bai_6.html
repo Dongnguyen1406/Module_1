@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+</form>
+</body>
+<script>
+
+    let doanhThu = +prompt("Nhap so doanh thu: ");
+    let hoahong;
+    if (doanhThu >= 50000000){
+        let hoahong = doanhThu*7/100;
+        alert(`Nhan vien se nhan duoc tong ${hoahong} tien hoa hong`);
+    } else if (doanhThu >= 10000000){
+        let hoahong = doanhThu*5/100;
+        alert(`Nhan vien se nhan duoc tong ${hoahong} tien hoa hong`);
+    } else {
+        let hoahong = doanhThu*3/100;
+        alert(`Nhan vien se nhan duoc tong ${hoahong} tien hoa hong`);
+    }
+</script>
+</html>

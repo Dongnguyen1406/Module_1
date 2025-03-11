@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+
+</form>
+</body>
+<script>
+    let a = prompt('nhap so a :' )
+    let b = prompt('nhap so b :' )
+    let c = prompt('nhap so c :' )
+    let delta = (b*b) - (4*a*c);
+    if (a != 0){
+        if (delta > 0){
+            let x_1 = (-b + Math.sqrt(delta))/(2*a);
+            let x_2 = (-b - Math.sqrt(delta))/(2*a);
+            alert(`PT co 2 nghiem phan biet la ${x_1} và ${x_2}`);
+        } else if (delta == 0){
+            let x = -b/(2*a);
+            alert(`PT co nghiem kep ${x}`);
+        } else {
+            alert("PT vo nghiem thu");
+        }
+    }
+</script>
+</html>

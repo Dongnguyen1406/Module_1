@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+</form>
+</body>
+<script>
+    let soPhut = +prompt("Nhap vao so phut ban da su dung ");
+    let cuocMacDinh = 25000;
+    let tongCuoc;
+    if (soPhut < 50){
+        tongCuoc = (soPhut*600) +  cuocMacDinh;
+        alert(`tong so cuoc phai tra la ${tongCuoc}`);
+    } else if (soPhut < 200){
+        tongCuoc = (50*600) + (soPhut-50)*400  + cuocMacDinh;
+        alert(`tong so cuoc phai tra la ${tongCuoc}`);
+    } else {
+        tongCuoc = (50*600) + (150*400) + (soPhut-200)*200+ cuocMacDinh;
+        alert(`tong so cuoc phai tra la ${tongCuoc}`);
+    }
+</script>
+</html>

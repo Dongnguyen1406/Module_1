@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+</form>
+</body>
+<script>
+    let diemBaiKiemTra = +prompt("Nhap diem bai kiem tra: ");
+    let diemThiGiuaKy = +prompt("Nhap diem thi giua ky: ");
+    let diemThiCuoiKy = +prompt("Nhap diem thi cuoi ky: ");
+    let diemTrungBinh = (diemBaiKiemTra + diemThiGiuaKy + diemThiCuoiKy)/3;
+    if (diemTrungBinh >= 8){
+        alert("hanh kiem gioi");
+    } else if (diemTrungBinh >= 7){
+        alert("hanh kiem kha");
+    } else if (diemTrungBinh >= 6){
+        alert("hanh kiem trung binh");
+    } else if (diemTrungBinh >= 5){
+        alert("hanh kiem yeu");
+    } else {
+        alert("hanh kiem kem");
+    }
+</script>
+</html>

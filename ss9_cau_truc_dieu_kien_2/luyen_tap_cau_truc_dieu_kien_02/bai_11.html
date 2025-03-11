@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+</form>
+</body>
+<script>
+    let thuNhap  = +prompt("Nhap vao so thu nhap cua ban than ");
+    let giamTruBanThan = 11000000;
+    let giamTruPhuThuoc  = 4400000;
+    let soNguoiPhuThuoc  = 0;
+    let thuNhapChiuThue = thuNhap - giamTruBanThan - (giamTruPhuThuoc * soNguoiPhuThuoc);
+    let thuePhaiNop = 0;
+    if (thuNhapChiuThue <=0) {
+        alert("Khong du dieu kien nop thue");
+    } else if (thuNhapChiuThue <= 5000000) {
+        thuePhaiNop = thuNhapChiuThue * 0.05
+    } else if(thuNhapChiuThue <= 10000000){
+        thuePhaiNop =  (5000000 * 0.05) + (thuNhapChiuThue - 5000000)*0.1;
+    } else if(thuNhapChiuThue <= 18000000){
+        thuePhaiNop = (5000000 * 0.05) + (5000000*0.1) + (thuNhapChiuThue - 10000000)*0.15;
+    } else if(thuNhapChiuThue <= 32000000){
+        thuePhaiNop = (5000000 * 0.05) + (5000000*0.1) + (8000000*0.15) + (thuePhaiNop - 18000000)*0.2;
+    } else if(thuNhapChiuThue <= 52000000){
+        thuePhaiNop = (5000000 * 0.05) + (5000000*0.1) + (8000000*0.15) + (14000000*0.2) + (thuePhaiNop - 32000000)*0.25;
+    } else if(thuNhapChiuThue <= 80000000){
+        thuePhaiNop = (5000000 * 0.05) + (5000000*0.1) + (8000000*0.15) + (14000000*0.2) + (20000000*0.25) + (thuePhaiNop - 52000000)*0.3;
+    } else {
+        thuePhaiNop = (5000000 * 0.05) + (5000000*0.1) + (8000000*0.15) + (14000000*0.2) + (20000000*0.25) + (28000000*0.3) + (thuePhaiNop - 80000000)*0.35;
+    }
+    alert(`Thuế TNCN phải nộp: ${thuePhaiNop}`);
+
+
+
+</script>
+</html>

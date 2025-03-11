@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <h2>Chuyển Đổi Độ</h2>
+    <div class="content">
+        <div class="left">
+            <label>Độ C</label>
+        </div>
+        <div class="right">
+            <input type="text" name="nhietdo" id="doC" required>
+        </div>
+    </div>
+    <label>Độ F:<span id="doF"></span> </label> <br><br>
+    <div>
+        <button type="button" onclick="chuyenDoiNhietDo()">Chuyển đổi</button>
+        <button type="reset" onclick="nhapLai()" value="">Nhập lại</button>
+    </div>
+</form>
+</body>
+<script>
+    function chuyenDoiNhietDo(){
+        let C = +document.getElementById("doC").value;
+        let F = 9*(C/5)+32;
+        document.getElementById("doF").innerText= " " + F;
+
+
+    }
+</script>
+</html>
