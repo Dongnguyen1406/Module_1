@@ -25,21 +25,21 @@
             return;
         }
 
-        chiSoCanNang=canNang/(chieuCao*chieuCao);
-        tinhtrang="";
+        let chiSoCanNang=canNang/(chieuCao*chieuCao);
+        let tinhTrang="";
         if(chiSoCanNang<18.5){
-            tinhtrang="Underweight";
+            tinhTrang="Underweight";
             // document.write("Underweight");
         } else if (chiSoCanNang<25.0){
-            tinhtrang="Normal";
+            tinhTrang="Normal";
             // document.write("Normal");
         } else if (chiSoCanNang<30.0){
-            tinhtrang="Overweight";
+            tinhTrang="Overweight";
             // document.write("Overweight");
         } else{
-            tinhtrang="Obese";
+            tinhTrang="Obese";
         }
-        document.getElementById('ketqua').innerText=`Chỉ số BMI của bạn là ${chiSoCanNang.toFixed(2)} - ${tinhtrang}`;
+        document.getElementById('ketqua').innerText=`Chỉ số BMI của bạn là ${chiSoCanNang.toFixed(2)} - ${tinhTrang}`;
     }
 </script>
 </html>

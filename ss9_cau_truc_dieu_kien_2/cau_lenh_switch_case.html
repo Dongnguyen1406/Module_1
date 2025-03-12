@@ -14,42 +14,42 @@
 </form>
 </body>
 <script>
-    let thang_1 = "1";
-    let thang_2 = "2";
-    let thang_3 = "3";
-    let thang_4 = "4";
-    let thang_5 = "5";
-    let thang_6 = "6";
-    let thang_7 = "7";
-    let thang_8 = "8";
-    let thang_9 = "9";
-    let thang_10 = "10";
-    let thang_11 = "11";
-    let thang_12 = "12";
+    const THANG_1 = "1";
+    const THANG_2 = "2";
+    const THANG_3 = "3";
+    const THANG_4 = "4";
+    const THANG_5 = "5";
+    const THANG_6 = "6";
+    const THANG_7 = "7";
+    const THANG_8 = "8";
+    const THANG_9 = "9";
+    const THANG_10 = "10";
+    const THANG_11 = "11";
+    const THANG_12 = "12";
     function kiemTraThang(){
         let month = document.getElementById('thang').value;
         switch (month){
-            case thang_1:
-            case thang_3:
-            case thang_5:
-            case thang_7:
-            case thang_8:
-            case thang_10:
-            case thang_12:
+            case THANG_1:
+            case THANG_3:
+            case THANG_5:
+            case THANG_7:
+            case THANG_8:
+            case THANG_10:
+            case THANG_12:
                 document.getElementById('ketqua').innerHTML = "Tháng " + month + " có 31 ngày";
                 break;
-            case thang_11:
-            case thang_4:
-            case thang_6:
-            case thang_9:
-            case thang_11:
+            case THANG_11:
+            case THANG_4:
+            case THANG_6:
+            case THANG_9:
+            case THANG_11:
                 document.getElementById('ketqua').innerHTML = "Tháng "+ month + " có 30 ngày";
                 break;
-            case thang_2:
-                document.getElementById('ketqua').innerHTML = "Tháng "+ month + " có 28 hoặc 29 ngày"
+            case THANG_2:
+                document.getElementById('ketqua').innerHTML = "Tháng "+ month + " có 28 hoặc 29 ngày";
                 break;
             default:
-                document.getElementById('ketqua').innerHTML = "Vui lòng nhập lại tháng"
+                document.getElementById('ketqua').innerHTML = "Vui lòng nhập lại tháng";
         }
     }
 </script>
