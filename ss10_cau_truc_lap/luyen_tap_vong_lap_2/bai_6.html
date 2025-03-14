@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let n = 6; // Độ rộng trái tim
+    let heart = "";
+    for (let i = n / 2; i <= n; i += 2) {  // In phần trên của trái tim
+        for (let j = 1; j < n - i; j += 2) {  // In khoảng trắng bên trái
+            heart += " ";
+        }
+        for (let j = 1; j <= i; j++) {  // In dấu * cho nửa trái tim
+            heart += "*";
+        }
+        for (let j = 1; j <= n - i; j++) {  // In khoảng trắng giữa hai nửa
+            heart += " ";
+        }
+        for (let j = 1; j <= i; j++) { // In dấu * cho nửa phải tim
+            heart += "*";
+        }
+        heart += "\n";
+    }
+    for (let i = n; i >= 0; i--) { // In phần dưới của trái tim (tam giác)
+        for (let j = i; j < n; j++) {   // In khoảng trắng bên trái
+            heart += " ";
+        }
+        for (let j = 1; j <= (i * 2) - 1; j++) {    // In dấu * cho phần tam giác dưới
+            heart += "*";
+        }
+        heart += "\n";
+    }
+    console.log(heart);
+
+</script>
+</body>
+</html>

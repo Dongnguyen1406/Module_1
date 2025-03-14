@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // (gocBenTrai(5);
+    // function gocBenTrai(n){
+    //     for (let i = 1; i <= n; i++) {
+    //         for (let j = 1; j <= i; j++) {
+    //             document.write("*");
+    //         }
+    //         document.write("<br>");
+    //     }
+    //
+    // }
+    //
+    //
+    // gocTrenBenTrai(5);
+    // function gocTrenBenTrai(n){
+    //     for (let i = n; i >= 1; i--) {
+    //         for (let j = 1; j <= i; j++) {
+    //             document.write("*");
+    //         }
+    //         document.write("<br>");
+    //     }
+    // }
+    // //
+    // //
+    //
+    // gocBenPhai(5);
+    // function gocBenPhai(n){
+    //
+    // }
+    //
+
+    // gocBenPhai(5);
+    // function gocBenPhai(n){
+    //     for (let i = 1; i <= n; i++) {
+    //         for (let j = 1; j <= n - i; j++) {
+    //             document.write("&nbsp;&nbsp");
+    //         }
+    //         for (let k = 1; k <= i; k++) {
+    //             document.write("*");
+    //         }
+    //         document.write("<br>");
+    //     }
+    // }
+
+
+
+    //
+    // gocTrenBenPhai(5);
+    // function gocTrenBenPhai(n){
+    //     for (let i = n; i >= 1; i--) {
+    //         let hang = " ";
+    //         for (let j = 1; j <= n - i; j++) {
+    //             hang += " ";
+    //         }
+    //         for (let k = 1; k <= i; k++) {
+    //             hang += "*"
+    //         }
+    //         console.log(hang);
+    //     }
+    // }
+
+    gocBenTrai(5);
+    function gocBenTrai(n) {
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= i ; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+    }
+    document.write("<br>");
+
+
+    gocTrenBenTrai(5);
+    function gocTrenBenTrai(n) {
+        for (let i = n; i >= 1; i--) {
+            for (let j = 1; j <= i; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+    document.write("<br>");
+
+    gocBenPhai(5);
+    function gocBenPhai(n) {
+        for (let i = 1; i <= n; i++) {
+            for (let j = n-i; j >= 1; j--) {
+                document.write("&nbsp;&nbsp");
+            }
+            for (let k = 1; k <= i; k++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+
+    document.write("<br>");
+
+    gocTrenBenPhai(5);
+    function gocTrenBenPhai(n) {
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= i-1; j++) {
+                document.write("&nbsp;&nbsp");
+            }
+            for (k = n; k >= i; k--){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

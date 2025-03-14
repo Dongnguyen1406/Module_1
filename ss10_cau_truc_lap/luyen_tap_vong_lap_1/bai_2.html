@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let nhietDo = +prompt("Enter nhiet do");
+    while (nhietDo <20 || nhietDo > 100) {
+        if (nhietDo > 100) {
+            nhietDo = +prompt("giảm nhiệt độ");
+        } else if (nhietDo < 20) {
+            nhietDo = +prompt("tăng nhiệt độ");
+        }
+    }
+</script>
+</body>
+</html>

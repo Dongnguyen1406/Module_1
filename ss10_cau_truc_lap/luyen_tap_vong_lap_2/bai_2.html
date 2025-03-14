@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // n!=n×(n−1)×(n−2)×...×2×1
+    let soNguyenDuong = +prompt("Enter a number");
+    let ketQua1 = 1;
+    let i = 1;
+    do{
+        ketQua1 = ketQua1 * i;
+        i++;
+    } while (i <= soNguyenDuong);
+    document.write(`${soNguyenDuong}! = ${ketQua1}`);
+</script>
+</body>
+</html>

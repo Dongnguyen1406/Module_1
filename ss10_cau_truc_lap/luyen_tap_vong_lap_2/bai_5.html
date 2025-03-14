@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let soTienVay = +prompt("Nhap so tien da gui");
+    let laiSuat = +prompt("Nhap so lai suat");
+    let soThang = +prompt("Nhap so thang");
+    let soTienLaiMoiThang = 0;
+    let laiSuatThapPhan = laiSuat/100;
+    let i = 1;
+    do{
+        soTienLaiMoiThang = soTienVay * laiSuatThapPhan;
+        soTienVay = soTienVay + soTienLaiMoiThang
+        document.write(`Thang ${i}: ${soTienVay} VND <br>`);
+        i++;
+    }while(i<=soThang);
+    document.write(`So tien sau ${soThang} thang : ${soTienVay} VND`);
+</script>
+</body>
+</html>

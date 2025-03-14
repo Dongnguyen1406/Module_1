@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    while (true) {
+        if (a % 5 === 0 && a !== 0) {
+            console.log("so chia het cho 5 là:", a);
+            break;
+        }
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+</script>
+</body>
+</html>

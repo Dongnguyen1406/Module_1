@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = +prompt("Enter numbers");
+        checkSoNguyen(numbers);
+        function checkSoNguyen(numbers) {
+            let demSoNguyenTo = 0;
+            let n =2;
+                while (demSoNguyenTo < numbers) {
+                   let soUocSNT = 0;
+                   for (let i = 1; i <= n; i++) {
+                       if(n%i == 0){
+                            soUocSNT++;
+                       }
+                   }
+                   if (soUocSNT == 2){
+                       demSoNguyenTo++;
+                       document.write(`${n} <br>`);
+                   }
+                   n++;
+                }
+        }
+
+
+                // if(demSoNguyenTo < numbers){
+                //     for (let j=1;j<=i;j++) {
+                //         if(i % j == 0){
+                //             demUocSoNT +=1;
+                //         }
+                //     }
+                //     if(demUocSoNT == 2){
+                //         document.write(i + "<br>");
+                //         demSoNguyenTo +=1;
+                //     }
+                //     demUocSoNT=0;
+                // } else {
+                //     break;
+                // }
+
+
+        // let soLuongSNT = 0;
+        // let n = 2;
+        // while (soLuongSNT < 20) {
+        //     let soUocSNT = 0;
+        //     for (let i = 1; i <= n; i++) {
+        //         if (n%i == 0) {
+        //             soUocSNT++;
+        //         }
+        //     }
+        //     if (soUocSNT == 2) {
+        //         soLuongSNT++;
+        //         console.log(n);
+        //     }
+        //     n++;
+        // }
+    </script>
+</body>
+</html>
