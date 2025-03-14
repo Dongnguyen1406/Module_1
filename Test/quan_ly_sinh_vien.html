@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let danhSach ;
+    do{
+        danhSach = +prompt(`----------Quản lý sinh viên---------- \n Hãy hập số để chọn dịch vụ \n1. Hiển thị danh sách sinh viên \n2. Thêm mới sinh viên \n3. Xóa sinh viên \n4. Kết thúc chương trình`);
+    switch (danhSach) {
+        case 1:
+            alert("Dich vu danh sach sinh vien");
+            break;
+        case 2:
+            alert("Them moi sinh vien");
+            break;
+        case 3:
+            alert("Xoa sinh vien");
+            break;
+        case 4:
+            let ketThuc = window.confirm("Ket thuc chuong trinh")
+           if( ketThuc = true){
+               break;
+           }
+        default:
+            alert("Vui lòng nhập số để chọn dịch vụ");
+            continue;
+    }
+    } while (danhSach !== 4);
+
+
+</script>
+</body>
+</html>

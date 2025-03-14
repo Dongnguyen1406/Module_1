@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let danhSach ;
+    let doUongDaChon = "";
+    let bill = 0;
+    let soTT = 0;
+    let soLuongCafe = 0;
+    let soLuongCaCao = 0;
+    let soLuongNuocCam = 0;
+    do{
+        danhSach = +prompt(`------------------Menu------------------ \n Hãy số để chọn đồ uống \n1. Cafe: 10k \n2. Ca cao: 15k \n3. Nước cam: 20k \n4. Kết thúc \n ----------Danh sách đã chọn---------- \n ${doUongDaChon} \n               $ Tổng tiền:  ${bill} k`);
+        switch (danhSach) {
+            case 1:
+                soLuongCafe += 1;
+                doUongDaChon = ` Cafe : 10k ${soLuongCafe} \n`;
+                bill += 10;
+
+                break;
+            case 2:
+                soLuongCaCao += 1;
+                doUongDaChon = `${soTT} Ca cao : 15k \n`;
+                bill += 15;
+
+                break;
+            case 3:
+                soLuongNuocCam += 1;
+                doUongDaChon = "Nước cam : 20k \n";
+                bill += 20
+                soTT += 1;
+                break;
+            case 4:
+                alert("ket thuc");
+            default:
+                alert("Vui lòng nhập số đồ uống")
+                continue;
+        }
+    } while(danhSach !== 4);
+</script>
+</body>
+</html>
