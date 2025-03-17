@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = +prompt("enter number");
+        let sum = 0;
+        for (let i = 1; i <= num; i++) {
+            let giaiThua = 1;
+            for (let j = i; j > 0; j--) {
+                giaiThua = giaiThua * j;
+            }
+            sum += ((-1)**i)/giaiThua;
+        }
+        let ketQua = 15+sum;
+        document.write(`S = 15 + 1/2 + 1/3 +....+(-1)**${num}*1/${num}! = ${ketQua}`);
+    </script>
+</body>
+</html>

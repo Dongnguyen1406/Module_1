@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = +prompt("enter number");
+        let tong = 0;
+        let tich = 1;
+        for (let i = number; i > 0; i = Math.floor(i/10)) { // cập nhập lại number sau khi tách và loại bỏ số cuối
+            let soCuoi = i % 10;
+            tong += soCuoi;
+            tich *= soCuoi;
+        }
+        document.write(`Tong = ${tong} <br>`);
+        document.write(`Tich = ${tich}`);
+    </script>
+</body>
+</html>

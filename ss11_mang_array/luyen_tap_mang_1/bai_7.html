@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = new Array(6);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhap element");
+    }
+    document.write(arr + "<br>");
+    let v = +prompt("Nhap element kiem tra");
+    for (let j = 1; j < arr.length; j++) {
+        if (v === arr[j]){
+            arr.splice(j, 1);
+            j--;
+            arr.push(0);
+        }
+    }
+    document.write(arr);
+
+
+</script>
+</body>
+</html>

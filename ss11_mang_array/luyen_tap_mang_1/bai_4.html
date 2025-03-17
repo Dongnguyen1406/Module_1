@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = new Array(5);
+    for (let i = 0; i < arr.length; i++){
+        arr[i] = +prompt("Nhap element")
+    }
+    // arr.reverse();
+    // document.write(arr);
+    let firstIndex = 0;
+    let lastIndex = arr.length-1;
+    while ( firstIndex < lastIndex ){
+        let b = arr[firstIndex];
+        arr[firstIndex] = arr[lastIndex];
+        arr[lastIndex] = b;
+        firstIndex++;
+        lastIndex--;
+    }
+    document.write(arr);
+</script>
+</body>
+</html>

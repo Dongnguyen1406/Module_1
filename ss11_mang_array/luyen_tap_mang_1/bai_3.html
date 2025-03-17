@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi = new Array(10);
+    let tongChuoi = 0;
+    let trungBinh = 0;
+    for (let i = 0; i < chuoi.length; i++){
+        chuoi[i] = +prompt("Nhap element");
+    }
+    document.write(chuoi + "<br>");
+    let max = 0;
+    for (let j = 1; j < chuoi.length; j++){
+        if (chuoi[j] > max){
+            max = chuoi[j];
+        }
+        tongChuoi += chuoi[j] ;
+    }
+    trungBinh = tongChuoi/10;
+    document.write(max + "<br>");
+    document.write(trungBinh + "<br>");
+</script>
+</body>
+</html>

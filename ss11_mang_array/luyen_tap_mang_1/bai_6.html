@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = new Array(10);
+    let timThay = false;
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhap element");
+    }
+    let v = +prompt("Nhap element kiem tra");
+    for (let j = 0; j < arr.length; j++) {
+        if (v === arr[j]){
+            timThay = true;
+            break;
+        }
+    }
+    if (timThay === true){
+        alert(`${v} is in the array`);
+    } else {
+        alert(`${v} is not in the array`);
+    }
+</script>
+</body>
+</html>

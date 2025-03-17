@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let a = new Array(10);
+    let b = new Array(10);
+    for (let i = 0; i < a.length; i++) {
+        a[i] = +prompt("Nhap element a");
+    }
+    for (let j = 0; j < b.length; j++) {
+        b[j] = +prompt("Nhap element b");
+    }
+    document.write(a + "<br>");
+    document.write(b + "<br>");
+    let chuoiA = a.join("");
+    let chuoiB = b.join("");
+    let result = chuoiA + chuoiB;
+    document.write(result.split(""));
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let num = +prompt("enter number");
+    let le = 1;
+    let chan = 1;
+
+        if (num % 2 == 0) {
+            for (let i = 2; i <= num ; i+=2) {
+                chan *= i;
+            }
+            document.write(`${chan}`);
+        } else {
+            for (let j = 1; j <= num ; j+=2) {
+                le *= j;
+            }
+            document.write(`${le}`);
+    }
+</script>
+</body>
+</html>

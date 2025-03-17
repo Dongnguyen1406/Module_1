@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = prompt("Nhap string");
+    let nguyenAm = 'u,e,o,a,i';
+    let chuoi = arr.split("");
+    document.write(chuoi + "<br>");
+    let count = 0;
+    for (let i = 0; i < chuoi.length; i++){
+         if (nguyenAm.indexOf(chuoi[i]) !== -1) {
+             count++
+         }
+    }
+    document.write("nguyen am co " + count);
+
+
+
+    // for (let i = 0; i < arr.length; i++){
+    //     arr[i] = +prompt("Nhap element")
+    // }
+    // document.write(arr + "<br>");
+    // let count = 0;
+    // for (let j = 1; j < arr.length; j++){
+    //     if (arr[j] < 0){
+    //         count++;
+    //     }
+    // }
+    // document.write(count);
+
+</script>
+</body>
+</html>

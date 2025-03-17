@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let number1 = +prompt("Nhap so nguyen to a");
+    let number2 = +prompt("Nhap so nguyen to b");
+    let number3 = number1;
+    let number4 = number2;
+    let uocCLN;
+    let boiCNN;
+    let tich = number1*number2;
+    if (number1 > 0 && number2 > 0) {
+        while (number2 !== 0) { // Lặp đến khi b = 0
+            uocCLN = number2;
+            number2 = number1 % number2; // Lấy phần dư của a chia b
+            number1 = uocCLN; // Cập nhật a = b cũ
+        }
+        boiCNN = tich/uocCLN;
+        document.write(`UCLN của (${number3}, ${number4}) = ${uocCLN} <br>`);
+        document.write(`BCNN của (${number3}, ${number4}) = ${boiCNN}`);
+    } else {
+        document.write("Vui lòng nhập hai số nguyên dương hợp lệ!");
+    }
+</script>
+</body>
+</html>

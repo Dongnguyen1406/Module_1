@@ -9,11 +9,16 @@
     <script>
         hinhTamGiac();
         function hinhTamGiac(){
-            for (let i = 0; i < 5; i++) {
-                for (let j = 0; j < i - 1; j++) {
+            for (let i = 0; i <= 10; i++) {
+                for (let j = 0; j <= 10-1; j++) {
+                    document.write("1");
+                }
+                for (let k = 10-1; k < 1 ; k--) {
                     document.write("*");
                 }
+                document.write("<br>");
             }
+
         }
     </script>
 </body>

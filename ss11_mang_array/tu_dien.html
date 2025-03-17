@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form action="">
+    <h2>Từ điển</h2>
+    <input type="text" id="nhapVao">
+    <input type="button" onclick="searchFunction()" value="Tìm kiếm">
+    <p id="result"></p>
+</form>
+</body>
+<script>
+    function searchFunction() {
+        let tiengAnh = ["Red", "Green", "Blue", "Purple", "Orange"];
+        let tiengViet = ["Đỏ", "Xanhlá", "Xanhdương", "Tím", "cam"];
+        let nhapVao = document.getElementById('nhapVao').value;
+        for (let i = 0; i < tiengAnh.length; i++) {
+                if (nhapVao === tiengAnh[i]) {
+                    document.getElementById('result').innerText = tiengViet[i];
+                } else {
+                    alert("khong tim thay");
+                }
+                break;
+        }
+    }
+</script>
+</html>
