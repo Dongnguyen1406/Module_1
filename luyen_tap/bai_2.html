@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhap chuoi");
+    let arr = chuoi.split(" ");
+    let arr2 = [];
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j] !== "") {
+            arr2.push(arr[j]);
+        }
+    }
+    let arr3 = [];
+    let count = 0;
+    for (let i = 1; i < arr2.length; i++) {
+       if (arr3.indexOf(arr2[i]) === -1) {
+           arr3.push(arr2[i]);
+       }
+    }
+    console.log(arr2);
+    console.log(arr3);
+
+    for (let j = 0; j < arr3.length; j++) {
+        for (let i = 0; i < arr2.length; i++) {
+            if(arr3[j] === arr2[i]) {
+                count++;
+            }
+        }
+        console.log(`${arr3[j]} xuan hien ${count}`);
+    }
+</script>
+</body>
+</html>

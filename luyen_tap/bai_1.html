@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Enter a number");
+    let arr = new Array(5);
+    let sum = 0
+    if (n > 0 && n < 20) {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = +prompt("Enter a element");
+        }
+        console.log(arr);
+        for (let j = 0; j < arr.length; j=j+2) {
+            if (arr[j] % 3 === 0) {
+                sum += arr[j];
+            }
+        }
+        console.log(sum);
+    } else {
+        alert("nhap lai n");
+    }
+</script>
+</body>
+</html>
