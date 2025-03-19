@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    let numbers = +prompt("Enter numbers");
+
+    isPrime(numbers);
+
+    function isPrime(numbers) {
+        if (numbers < 10000) {
+            let n = 2;
+            let soUocSNT = 0;
+            for (let i = 1; i <= numbers; i++) {
+                if (numbers % i == 0) {
+                    soUocSNT++;
+                }
+            }
+            if (soUocSNT == 2) {
+                alert(`${numbers} la so nguyen to`);
+
+            } else {
+                alert(`${numbers} khong la so nguyen to`);
+            }
+        } else {
+            alert(`${numbers} khong la so nguyen to`);
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = new Array(5);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = prompt("nhap ky tu");
+    }
+    document.write(arr + "<br>");
+    let kyTu = prompt("nhap check ky tu");
+    let xuathien = 0;
+    function checkKyTu(arr){
+            for (let i = 0; i < arr.length; i++) {
+                if (kyTu === arr[i]) {
+                    xuathien++;
+                }
+            }
+            if (xuathien > 0) {
+                return xuathien;
+            } else {
+                return -1;
+            }
+    }
+    document.write(checkKyTu(arr));
+
+
+
+</script>
+</body>
+</html>

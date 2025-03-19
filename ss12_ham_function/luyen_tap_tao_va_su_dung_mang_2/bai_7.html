@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let num1 = +prompt("enter number1");
+    let num2 = +prompt("enter number2");
+
+    function hoanDoi(num1, num2) {
+        let temp = num1;
+        num1 = num2;
+        num2 = temp;
+        document.write(`${num1} , ${num2}`);
+    }
+
+   hoanDoi(num1, num2);
+</script>
+</body>
+</html>

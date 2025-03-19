@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Enter a number");
+    let b = +prompt("Enter a number");
+    let c = +prompt("Enter a number");
+    let soLN;
+    function checkSN(a, b, c) {
+        if (a < b && a < c) {
+            soLN = a;
+        } else if (b<c) {
+            soLN = b;
+        } else {
+            soLN = c;
+        }
+        return soLN;
+    }
+    document.write(checkSN(a, b, c));
+</script>
+</body>
+</html>

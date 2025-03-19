@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+        <script>
+            let meter = +prompt("Enter number of feet");
+            let foot = +prompt("Enter number of foot");
+
+
+
+
+            function footToMeter(foot) {
+                let chuyenDoiFoot = foot * 0.305;
+                return chuyenDoiFoot;
+
+            }
+
+            function meterToFoot(meter){
+                let chuyenDoiMeters = meter * 3.279;
+                return chuyenDoiMeters;
+
+            }
+
+            document.write(footToMeter(foot) + "<br>");
+            document.write(meterToFoot(meter));
+
+        </script>
+</body>
+</html>

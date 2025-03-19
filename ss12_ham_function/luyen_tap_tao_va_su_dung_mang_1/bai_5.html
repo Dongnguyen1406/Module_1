@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhap ten ngoi sao ")
+    let ngoisao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+    let chomsao = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+
+    function checkNgoiSao(chuoi) {
+        for (let i = 0; i < ngoisao.length; i++) {
+            if (chuoi == ngoisao[i]) {
+                let tenChomSao = chomsao[i];
+                return tenChomSao;
+            } else {
+                alert("khong tim thay ten ngoi sao");
+                break;
+            }
+        }
+    }
+    document.write(checkNgoiSao(chuoi));
+</script>
+</body>
+</html>

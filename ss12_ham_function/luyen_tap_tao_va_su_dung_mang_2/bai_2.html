@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let banKinh = +prompt("Enter bán kính");
+    const PI = 3.14
+
+    function chuVi(banKinh){
+        const PI = 3.14
+        let ketQuaChuVi = PI* banKinh*banKinh;
+        return ketQuaChuVi;
+    }
+
+    function dienTich(banKinh){
+        let ketQuaDienTich =  PI*banKinh*banKinh;
+        return ketQuaDienTich;
+    }
+    document.write(chuVi(banKinh) + "<br>")
+    document.write(dienTich(banKinh));
+</script>
+</body>
+</html>

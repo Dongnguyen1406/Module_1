@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let num = +prompt("Nhap so ");
+    function checkSoND(num) {
+        if (num >= 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    if (checkSoND(num) == true) {
+        alert(num + "la so nguyen duong");
+    } else {
+        alert(num + "khong la so nguyen duong");
+    }
+</script>
+</body>
+</html>

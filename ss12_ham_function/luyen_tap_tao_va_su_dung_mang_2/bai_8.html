@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = new Array(5);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhap phan tu mang");
+
+    }
+    document.write(arr + "<br>");
+    function daoNguoc(arr) {
+        let first = 0;
+        let last = arr.length - 1;
+        for (let i = 0; i < arr.length; i++) {
+            let temp = arr[first];
+            arr[first] = arr[last];
+            arr[last] = temp;
+        }
+        return arr;
+    }
+    document.write(daoNguoc(arr));
+
+
+</script>
+</body>
+</html>
