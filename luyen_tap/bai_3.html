@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi;
+    let arr;
+    do {
+        chuoi = prompt("Nhập một số có đúng 4 chữ số:");
+        arr = chuoi.split("");
+    } while (isNaN(chuoi) || arr.length !== 4);
+
+    if (arr.length === 4) {
+        let soLonNhat = 0;
+        for (let i = 0; i < arr.length; i++) {
+           let arr2 = arr.slice(); // copy mang arr gan cho arr2
+           arr2.splice(i, 1);
+            console.log(arr2);
+           let soDaCat = arr2.join("");
+           if (soDaCat > soLonNhat) {
+               soLonNhat = soDaCat;
+           }
+        }
+        console.log(soLonNhat);
+        alert("Số lớn nhất là " + soLonNhat);
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

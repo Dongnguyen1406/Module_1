@@ -16,15 +16,15 @@
 <script>
     function searchFunction() {
         let tiengAnh = ["Red", "Green", "Blue", "Purple", "Orange"];
-        let tiengViet = ["Đỏ", "Xanhlá", "Xanhdương", "Tím", "cam"];
+        let tiengViet = ["Đỏ", "Xanh lá", "Xanh dương", "Tím", "cam"];
         let nhapVao = document.getElementById('nhapVao').value;
         for (let i = 0; i < tiengAnh.length; i++) {
                 if (nhapVao === tiengAnh[i]) {
                     document.getElementById('result').innerText = tiengViet[i];
+                    break;
                 } else {
-                    alert("khong tim thay");
+                    document.getElementById('result').innerText = "khong tim thay";
                 }
-                break;
         }
     }
 </script>
