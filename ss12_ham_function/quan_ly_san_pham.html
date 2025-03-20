@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        body{
+            padding-left: 20px;
+            width: 50%;
+        }
+        .top{
+            background-color: #f2f2f2;
+            padding: 20px;
+            padding-right: 10px;
+            width: 50%;
+        }
+        input[type=text]{
+            height: 30px;
+            width: 350px;
+            padding-left: 10px;
+        }
+        input[type=button]{
+            height: 35px;
+            border-radius: 3px;
+            border: none;
+            padding: 10px;
+            padding-right: 20px;
+            padding-left: 20px;
+            background-color: green;
+            color: white;
+        }
+        td{
+            padding-left: 0px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+        td{
+            border: none;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ededed;
+        }
+        .title{
+            display: flex;
+        }
+        .left{
+            padding-right: 70%;
+        }
+        .right{
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Add New Product</h2>
+        <div class="top">
+            <input type="text" placeholder="New Product" id="newProduct">
+            <input type="button" onclick="addProduct()" value="Add">
+<!--            <input type="button" onclick="deleteProduct()" value="Delete">-->
+<!--            <input type="button" onclick="editProduct()" value="Edit">-->
+        </div>
+        <div class="bottom">
+            <h2>Display All Product</h2>
+            <div class="title">
+                <div class="left"><h3>Product Name </h3></div>
+                <div class="right"><p><span id="countProduct"></span> products</p></div>
+            </div>
+            <p id="productList"></p>
+        </div>
+    </form>
+</body>
+<script>
+    let products = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple iPhone 6S", "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", "Fujitsu F-04E", "Oppo A71"];
+
+    function countProduct() {
+        let countProduct = 0;
+        for (let i = 0; i < products.length; i++) {
+            if (products.length > 0) {
+                countProduct = products.length;
+                document.getElementById("countProduct").innerHTML = countProduct + " products";
+            } else {
+                document.getElementById("countProduct").innerHTML = "No Product to Display";
+            }
+        }
+    }
+    countProduct()
+
+    // <tr>
+    // <th width="400px"></th>
+    // <th width="300px"></th>
+    // <th width="300px"></th>
+    // </tr>
+
+
+    display(products);
+    function display(list) {
+        // document.getElementById("productList").innerHTML = products.join("<br>");
+        let productTable = `<table>
+                           `;
+        for (let i = 0; i < list.length; i++) {
+            productTable += `<tr>
+                                <td width="400px">${list[i]}</td>
+                                <td width="300px">
+                                <input type="button" onclick="editProduct(${i})" value="Edit">
+                                </td>
+                                <td width="300px">
+                                <input type="button" onclick="deleteProduct(${i})" value="Delete">
+                                </td>
+                             </tr>`;
+        }
+        document.getElementById("productList").innerHTML = productTable;
+        document.getElementById("countProduct").innerHTML = products.length;
+
+    }
+
+
+    function addProduct() {
+        let newProduct = document.getElementById("newProduct").value;
+            if (newProduct.trim() !== "")  {
+                products.push(newProduct);
+                document.getElementById("newProduct").value = "";
+                display(products);
+            } else {
+                alert("Please enter a product name!");
+            }
+
+
+    }
+
+    function deleteProduct(index) {
+        let confirmDelete = confirm("Are you sure you want to delete product: " + products[index] + "?");
+        if (confirmDelete) {
+            products.splice(index, 1);
+        }
+        display(products);
+
+        // let oldProduct = document.getElementById("newProduct").value;
+        // let indexOldProduct = products.indexOf(oldProduct);
+        // if (indexOldProduct !== -1) {
+        //     for (let i = 0; i < products.length; i++) {
+        //         if (oldProduct.includes(products[i])) {
+        //             products.splice(i, 1);
+        //             document.getElementById("newProduct").value = "";
+        //             // document.getElementById("productList").innerHTML = products.join("<br>");
+        //             display(products);
+        //         }
+        //     }
+        // } else {
+        //     alert("Not found product!");
+        // }
+
+    }
+
+    function editProduct(index) {
+        let confirmEdit = confirm("Are you sure you want to edit product: " + products[index] + "?");
+        if (confirmEdit) {
+            let changedProduct = prompt("Change Product Name");
+            if (changedProduct !== null && changedProduct !== "") {
+                products[index] = changedProduct;
+                document.getElementById("newProduct").value = "";
+                display(products);
+            } else {
+                alert("Please enter a new product name!");
+            }
+        }
+
+
+        // for (let i = 0; i < products.length; i++) {
+        //     if (oldProduct.includes(products[i])) {
+        //         let changedProduct = prompt("Change Product Name");
+        //         products[i] = changedProduct;
+        //         // oldProduct = products[i];
+        //         console.log(products[i]);
+        //     }
+        // }
+
+        // let oldProduct = document.getElementById("newProduct").value;
+        // let indexOldProduct = products.indexOf(oldProduct);
+        // if (indexOldProduct !== -1 ) {
+        //     let changedProduct = prompt("Change Product Name");
+        //     if (changedProduct !== null && changedProduct !== "") {
+        //         products[indexOldProduct] = changedProduct;
+        //         display();
+        //         document.getElementById("newProduct").value = "";
+        //     } else {
+        //         alert("Please enter a new product name!");
+        //     }
+        //
+        // } else {
+        //     alert("Not found product!");
+        // }
+
+
+    }
+
+</script>
+</html>
