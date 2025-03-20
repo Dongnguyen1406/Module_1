@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = new Array(5);
+    var chu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var so = '0123456789';
+    let kyTuSo = false;
+    let kyTuChu = false;
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = prompt("Nhập ký tự");
+    }
+    function checkMangKyTu(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (chu.indexOf(arr[i]) !== -1) {
+                kyTuChu = true;
+            } else {
+                kyTuSo = true;
+            }
+        }
+        if (kyTuChu === true && kyTuSo === true) {
+            return -1;
+        }
+        if (kyTuSo === true) {
+            return 1;
+        }
+        if (kyTuChu === true) {
+            return 0;
+        }
+    }
+
+    alert(checkMangKyTu(arr));
+
+</script>
+</body>
+</html>

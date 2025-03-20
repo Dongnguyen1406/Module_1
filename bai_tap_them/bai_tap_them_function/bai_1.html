@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = new Array(5);
+    for (i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Enter Product Name");
+    }
+    console.log(arr);
+    function checkSN(arr) {
+        chan = false;
+        le = false;
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                chan = true;
+            } else {
+               le = true;
+            }
+        }
+        if (chan === true && le === true) {
+            return -1;
+        }
+        if (chan === true) {
+            return 1;
+        }
+        if (le === true) {
+            return 0;
+        }
+    }
+alert(checkSN(arr));
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

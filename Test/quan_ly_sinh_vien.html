@@ -7,20 +7,24 @@
 </head>
 <body>
 <script>
-    let danhSach ;
+    let danhSachHocSinh = ["Nguyen Van A", "Khanh", "Binh"];
     do{
-        danhSach = +prompt(`----------Quản lý sinh viên---------- \n Hãy hập số để chọn dịch vụ \n1. Hiển thị danh sách sinh viên \n2. Thêm mới sinh viên \n3. Xóa sinh viên \n4. Kết thúc chương trình`);
+        danhSach = +prompt(`----------Quản lý sinh viên---------- \n Hãy hập số để chọn dịch vụ \n1. Hiển thị danh sách sinh viên \n2. Thêm mới sinh viên \n3. Xóa sinh viên \n4. Sửa sinh viên \n5. Kết thúc chương trình`);
     switch (danhSach) {
         case 1:
-            alert("Dich vu danh sach sinh vien");
+            // prompt(`Dich vu danh sach sinh vien`);
+            displayList(danhSachHocSinh);
             break;
         case 2:
-            alert("Them moi sinh vien");
+            addPerson(danhSach);
             break;
         case 3:
-            alert("Xoa sinh vien");
+            deletePerson(danhSachHocSinh);
             break;
         case 4:
+            editPerson(danhSachHocSinh);
+            break;
+        case 5:
             let ketThuc = window.confirm("Ket thuc chuong trinh")
            if( ketThuc = true){
                break;
@@ -29,9 +33,55 @@
             alert("Vui lòng nhập số để chọn dịch vụ");
             continue;
     }
-    } while (danhSach !== 4);
+    } while (danhSach !== 5);
 
+    function displayList(danhSachHocSinh) {
+        let arr = "";
+       for (let i = 0; i < danhSachHocSinh.length; i++) {
+           arr += `${i+1} ${danhSachHocSinh[i]}\n`;
+       }
+       alert(arr);
+    }
 
+    function addPerson() {
+        let newPerson = prompt("Nhập để thêm mới");
+        if (newPerson !== null && newPerson !== "") {
+            danhSachHocSinh.push(newPerson);
+        }
+        else {
+            alert("Vui lòng nhập tên học viên để thêm");
+        }
+    }
+
+    function deletePerson(danhSach) {
+        let arr = "";
+        for (let i = 0; i < danhSach.length; i++) {
+            arr += `${i+1} ${danhSach[i]}\n`;
+        }
+        let index = +prompt(`${arr} \n Nhập vị trí cần xóa: `);
+        if(index > 0 && index < danhSach.length) {
+            danhSach.splice(index-1, 1);
+        } else {
+            alert("Vui lòng nhập vị trí cần xóa");
+        }
+        displayList(danhSachHocSinh);
+
+    }
+
+    function editPerson(danhSach) {
+        let arr = "";
+        for (let i = 0; i < danhSach.length; i++) {
+            arr += `${i+1} ${danhSach[i]}\n`;
+        }
+        let index = +prompt(`${arr} \n Nhập vị trí cần sửa: `);
+        if(index > 0 && index < danhSach.length) {
+            let changedPerson = prompt("Sửa học sinh");
+            danhSach[index] = changedPerson;
+        } else {
+            alert("Vui lòng nhập vị trí cần sửa")
+        }
+        displayList(danhSachHocSinh);
+    }
 </script>
 </body>
 </html>
