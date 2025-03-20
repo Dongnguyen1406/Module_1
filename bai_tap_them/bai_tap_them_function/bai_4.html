@@ -7,7 +7,28 @@
 </head>
 <body>
 <script>
-
+    let toaDoX = new Array(4);
+    let toaDoY = new Array(4);
+    for (let i = 0; i < toaDoX.length; i++) {
+        toaDoX[i] = +prompt("Nhập tọa độ x");
+        toaDoY[i] = +prompt("Nhập tọa độ y");
+    }
+    for (let j = 0; j < toaDoX.length; j++) {
+        console.log(`[${toaDoX[j]} , ${toaDoY[j]}]`);
+    }
+    function checkToaDo(toaDoX, toaDoY){
+        for (let j = 0; j < toaDoX.length; j++) {
+            if (toaDoY[j] !== 2*toaDoX[j]+1) {
+                return false;
+            }
+        }
+        return true;
+    }
+    if (checkToaDo(toaDoX, toaDoY) === true) {
+        alert("TRUE")
+    } else {
+        alert("FALSE")
+    }
 </script>
 </body>
 </html>

@@ -7,28 +7,33 @@
 </head>
 <body>
 <script>
-    let arr = new Array(1);
+    let arr = new Array(5);
     for (let i = 0; i < arr.length; i++) {
         arr[i] = +prompt('Enter a number');
     }
-    function checkSoNT(n) {
-        if (n < 2) {
-            return false;
-        }
-        if (n === 2) {
-            return true;
-        }
-        for (let i = 2; i < n; i++) {
-            if (n % i === 0) {
+    function checkSoNT(arr) {
+        for (let i = 1; i < arr.length; i++) {
+            let num = arr[i];
+            if (num < 2) {
+                return false;
+            }
+            let soUocSNT = 0;
+            for (let j = 1; j <= num; j++) {
+                if (num % j === 0) {
+                    soUocSNT++;
+                }
+            }
+            if (soUocSNT !== 2) {
                 return false;
             }
         }
         return true;
     }
-    if (checkSoNT(arr[0])) {
-        alert(arr[0] + " là số nguyên tố");
+
+    if (checkSoNT(arr)) {
+        alert("True"); // Tất cả đều là số nguyên tố
     } else {
-        alert(arr[0] + " không phải số nguyên tố");
+        alert("False"); // Có ít nhất 1 số không phải số nguyên tố
     }
 
 
