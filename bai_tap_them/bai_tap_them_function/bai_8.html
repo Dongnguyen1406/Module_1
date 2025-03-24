@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoiKyTu = prompt("Nhap chuoi ky tu");
+
+    let arr = chuoiKyTu.split("");
+    for (let i = 0; i < arr.length; i++) {
+
+    }
+
+    function checkChuoiKyTu(chuoi) {
+        let ketqua = ""
+        let khoangCach = true
+        for (let i = 0; i < chuoi.length; i++) {
+            let kyTu = chuoi[i].toLowerCase();
+            if (kyTu !== " ") {
+                if (khoangCach) {
+                    ketqua += kyTu.toUpperCase();
+                } else {
+                    ketqua += kyTu.toLowerCase();
+                }
+
+                khoangCach = false;
+            } else if(!khoangCach) {
+                ketqua += " ";
+                khoangCach = true;
+            }
+        }
+        return ketqua;
+
+    }
+
+    alert(checkChuoiKyTu(chuoiKyTu));
+
+</script>
+</body>
+</html>

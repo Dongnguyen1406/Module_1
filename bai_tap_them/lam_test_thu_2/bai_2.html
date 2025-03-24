@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = new Array(5)
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhap phan tu mang");
+    }
+
+    function checkUocSo(mang){
+        for (let i = 1; i < mang.length; i++) {
+            for (let j = 0; j < i; j++) {
+                if (mang[i] % mang[j] !== 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    if (checkUocSo(arr) === true) {
+        alert("OK");
+    } else {
+        alert("NO");
+    }
+
+</script>
+</body>
+</html>

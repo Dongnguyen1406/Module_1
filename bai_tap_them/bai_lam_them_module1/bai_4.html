@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhập chuỗi");
+    let chuoiMoi = chuoi.split("");
+    function checkString(str){
+        let chuHoa = 0;
+        let chuThuong = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === str[i].toLowerCase()) {
+                chuThuong += 1;
+                console.log(chuThuong);
+            }
+            if (str[i] === str[i].toUpperCase()) {
+                chuHoa += 1;
+                console.log(chuHoa);
+            }
+        }
+        if (chuHoa === chuThuong) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (checkString(chuoiMoi) === true) {
+        alert("True");
+    } else {
+        alert("False");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celsius, min) {
+            this.celsius = celsius;
+            this.min = min;
+        }
+        getCelsius() {
+                return this.celsius;
+        }
+        setCelsius(celsius) {
+            if (celsius > 0 && celsius < 100) {
+                this.celsius = celsius;
+                return true;
+            } else {
+                return false;
+            }
+    }
+        getFahrenheit() {
+            return (this.celsius * 9/5)+32;
+        }
+        getKelvin() {
+
+            return this.celsius + 273.15;
+        }
+    }
+    let temperature = new Temperature();
+    let celsius = temperature.getCelsius();
+    do{
+        celsius = +prompt("nhập độ c ");
+        mucToiThieu = temperature.setCelsius(celsius);
+        if (!mucToiThieu) {
+            alert("Nhập lại !")
+        }
+    }while(!mucToiThieu);
+    alert(temperature.getFahrenheit());
+    alert(temperature.getKelvin());
+
+</script>
+</body>
+</html>

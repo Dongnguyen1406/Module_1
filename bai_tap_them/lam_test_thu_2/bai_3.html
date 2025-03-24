@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let number = 10;
+    function changeBinary(num){
+        let binary = "";
+        do {
+        if (num % 2 == 0) {
+            binary += "1";
+        } else {
+            binary += "0";
+        }
+        num = parseInt(num/2);
+        if (num < 1) {
+            alert(binary);
+            break;
+        }
+        } while(true)
+    }
+
+    changeBinary(number);
+</script>
+</body>
+</html>

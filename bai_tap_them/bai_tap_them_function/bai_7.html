@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Enter a number");
+    let b = +prompt("Enter a number");
+    let c = +prompt("Enter a number");
+
+    function checkTriangle(a ,b, c) {
+
+
+        if (a+b<=c){
+            alert("Khong phai la canh tam giac");
+        } else if (a*a + b*b === c*c) {
+            alert("la tam giac vuong");
+        } else {
+            alert("la tam giac thuong");
+        }
+    }
+
+    alert(checkTriangle(a, b, c));
+</script>
+</body>
+</html>

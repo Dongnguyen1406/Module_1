@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi = "cabca";
+    let arr = chuoi.split("");
+    console.log(arr);
+    function checkChuoiKyTu(chuoiKyTu) {
+        let arr2 = [];
+        for (let i = 0; i < chuoiKyTu.length; i++) {
+
+            if (!arr2.includes(chuoiKyTu[i])) {
+                arr2.push(chuoiKyTu[i]);
+            }
+        }
+        return arr2.length;
+    }
+
+    alert(checkChuoiKyTu(chuoi));
+
+
+
+</script>
+</body>
+</html>

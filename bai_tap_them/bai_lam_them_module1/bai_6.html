@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhập một chuỗi");
+    let chuoiMoi = chuoi.split("");
+    let nguyenAm = ["u", "e", "o", "a", "i"];
+    function checkString(str) {
+        let result = [];
+        for (let i = 0; i < str.length; i++) {
+            let kyTu = str[i].toLowerCase();
+            if (nguyenAm.includes(kyTu) && !result.includes(kyTu)) {
+                    result.push(kyTu);
+            }
+        }
+        return result;
+    }
+    alert(checkString(chuoiMoi));
+
+</script>
+</body>
+</html>

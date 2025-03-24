@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        body {
+            padding-left: 20px;
+
+        }
+
+        .top {
+            background-color: #f2f2f2;
+            padding: 20px;
+            padding-right: 10px;
+            width: 50%;
+        }
+
+        input[type=text] {
+            height: 30px;
+            width: 150px;
+            padding-left: 10px;
+        }
+        input[type=number] {
+            height: 30px;
+            width: 150px;
+            padding-left: 10px;
+        }
+
+        input[type=button] {
+            height: 35px;
+            border-radius: 3px;
+            border: none;
+            padding: 10px;
+            padding-right: 20px;
+            padding-left: 20px;
+            background-color: green;
+            color: white;
+        }
+
+        td {
+            padding-left: 0px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        td {
+            border: none;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ededed;
+        }
+
+        .title {
+            display: flex;
+        }
+
+        .left {
+            padding-right: 70%;
+        }
+
+        .right {
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<form>
+    <h2>Add New Product</h2>
+    <div class="top">
+<!--        <input type="number" placeholder="New Product" id="idProduct">-->
+        <input type="text" placeholder="New Product" id="nameProduct">
+        <input type="button" onclick="managerProduct.addProduct()" value="Add">
+    </div>
+    <div class="bottom">
+        <h2>Display All Product</h2>
+        <div class="title">
+            <div class="left"><h3>Product Name </h3></div>
+            <div class="right"><p id="countProduct">No Product to Display</p></div>
+        </div>
+        <p id="productList"></p>
+    </div>
+</form>
+</body>
+<script>
+    class Product {
+        constructor(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+    }
+
+    class ManagerProduct {
+        constructor() {
+            this.product = [];
+            this.idIncreasing = 1;
+        }
+
+        addProduct() {
+            // let idProduct = document.getElementById('idProduct').value;
+            let nameProduct = document.getElementById('nameProduct').value;
+            if (nameProduct.trim() === "" ) {
+                alert("Please enter a product name");
+            } else {
+                let productName = new Product(this.idIncreasing++, nameProduct);
+                this.product.push( productName);
+                // document.getElementById("idProduct").value = "";
+                document.getElementById("nameProduct").value = "";
+                this.countProduct();
+                this.displayProduct(this.product);
+
+            }
+
+        }
+
+        deleteProduct(index) {
+            let confirmDelete = confirm("Are you sure you want to delete product: " + this.product[index].getName() + "?");
+            if (confirmDelete) {
+               this.product.splice(index, 1);
+            }
+            this.displayProduct(this.product);
+            managerProduct.countProduct();
+        }
+
+        editProduct(index) {
+            let confirmEdit = confirm("Are you sure you want to edit product: " + this.product[index].getName() + "?");
+            if (confirmEdit) {
+                let changedProduct = prompt("Changed Product? Name");
+                if (changedProduct !== null && changedProduct !== "") {
+                    this.product[index].setName(changedProduct);
+                    document.getElementById("idProduct").value = "";
+                    document.getElementById("nameProduct").value = "";
+                    this.displayProduct(this.product);
+                } else {
+                    alert("Please enter a product name!");
+                }
+            }
+        }
+
+        displayProduct() {
+            let productList = `<table>
+                           `;
+            for (let i = 0; i < this.product.length; i++) {
+                productList += `<tr>
+                                <td width="400px">${this.product[i].getId()}</td>
+                                <td width="400px">${this.product[i].getName()}</td>
+                                <td width="300px">
+                                <input type="button" onclick="managerProduct.editProduct(${i})" value="Edit">
+                                </td>
+                                <td width="300px">
+                                <input type="button" onclick="managerProduct.deleteProduct(${i})" value="Delete">
+                                </td>
+                             </tr>`;
+            }
+            productList+="</table>";
+            document.getElementById("productList").innerHTML = productList;
+        }
+
+        countProduct() {
+                if (this.product.length > 0) {
+                    document.getElementById("countProduct").innerText = this.product.length + " products";
+                } else {
+                    document.getElementById("countProduct").innerText = "No Product to Display";
+                }
+            }
+    }
+
+    const managerProduct = new ManagerProduct();
+
+
+</script>
+</html>

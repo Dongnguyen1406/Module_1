@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let num = +prompt("Nhập độ dài mảng");
+    let mang = new Array(num);
+    if (num <= 0) {
+        alert("Vui lòng nhập độ dài mảng hợp lệ!");
+    } else {
+        for (let i = 0; i < num; i++) {
+            mang[i] = +prompt(`Nhập phần từ mảng thứ ${i}`);
+        }
+        console.log(mang);
+        for (let i = 0; i < mang.length; i++) {
+
+        }
+    }
+</script>
+</body>
+</html>

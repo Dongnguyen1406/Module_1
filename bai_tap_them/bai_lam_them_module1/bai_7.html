@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let num = +prompt("Nhập độ dài mảng");
+    let arr = new Array(num);
+    if (num <= 0) {
+        alert("Vui lòng nhập đồ dài mảng lớn hơn không!")
+    } else {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = +prompt(`Nhập phần tử mảng thứ ${i}`);
+        }
+        function checkArray(mang){
+            let result = [];
+            for (let i = 0; i < mang.length; i++) {
+                let number = mang[i];
+                let hangChuc = Math.floor(number/10);
+                let hangDonVi = number % 10;
+
+                if (hangDonVi > hangChuc) {
+                    result.push(number);
+                }
+            }
+            return result;
+        }
+        alert(checkArray(arr));
+    }
+</script>
+</body>
+</html>

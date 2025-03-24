@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Circle{
+        constructor(radius ){
+            this.radius = radius;
+        }
+        getRadius(){
+            return this.radius;
+        }
+        getArea(){
+            return Math.PI * radius * radius;
+        }
+    }
+
+    let circle = new Circle(2);
+    let radius = circle.getRadius();
+    console.log(radius);
+    console.log(circle.getArea());
+</script>
+</body>
+</html>

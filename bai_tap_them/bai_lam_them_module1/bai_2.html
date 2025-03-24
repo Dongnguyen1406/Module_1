@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = +prompt("Nhập độ dài mảng");
+        let arr = new Array(num);
+        if (num % 2 === 0) {
+            for (let i = 0; i < num; i++) {
+                arr[i] = +prompt(`Nhập phần tử mảng thứ ${i}`);
+            }
+        } else {
+            alert("Vui lòng nhập độ dài mảng là số chẵn ");
+        }
+
+        let maxArray = arr.length/2;
+        function soSanhPhanTu(mang){
+            // i+maxArray là so sánh phần tử đầu
+            // maxArray -1 -j là so sánh phần tử cuối
+            for (let i = 0; i < maxArray; i++) {
+                if (mang[i + maxArray] !== (mang[i])**2) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        if (soSanhPhanTu(arr) === false) {
+            alert("FALSE");
+        } else {
+            alert("TRUE");
+        }
+    </script>
+</body>
+</html>

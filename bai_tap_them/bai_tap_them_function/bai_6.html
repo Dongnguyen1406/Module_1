@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhap 1 chuoi")
+    let arr = chuoi.split("");
+    function checkString(arr) {
+        let nguyenAm = ["u", "e", "o", "a", "i"];
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+            let char = arr[i].toLowerCase();
+            if (nguyenAm.includes(char) && !result.includes(char))  {
+                result.push(char);
+            }
+        }
+        return result;
+    }
+    console.log(checkString(arr));
+</script>
+</body>
+</html>

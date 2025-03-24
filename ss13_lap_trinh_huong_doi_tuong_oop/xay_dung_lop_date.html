@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class MyClass {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        getDay(){
+            return this.day;
+        }
+        getMonth(){
+            return this.month;
+        }
+        getYear(){
+            return this.year;
+        }
+        setDay(day){
+            this.day = day;
+        }
+        setMonth(month){
+            this.month = month;
+        }
+        setYear(year){
+            this.year = year;
+        }
+
+        show(){
+            alert(`${this.day}/${this.month}/${this.year}`) ;
+        }
+        setDate(day,month,year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+    }
+    let date = new MyClass(2,2,2007);
+    // MyClass.prototype.setDate = function (day, month, year) {
+    //     this.day = day;
+    //     this.month = month;
+    //     this.year = year;
+    // }
+    date.setDate(10,10,2019);
+    date.show();
+
+</script>
+</body>
+</html>

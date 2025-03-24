@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let doDaiMang = +prompt("Nhập độ dài mảng");
+        let arr = new Array(doDaiMang);
+
+        if (doDaiMang % 2 === 0) {
+            for (let j = 0; j < arr.length; j++) {
+                arr[j] = +prompt(`Nhập phần tử thứ ${j + 1}`);
+            }
+            console.log(arr);
+        } else {
+            alert("Vui lòng nhập số chẵn");
+        }
+
+        function checkManger(arr) {
+            for (let j = 0; j < arr.length - 1; j += 2) {
+                if (arr[j] >= arr[j + 1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        if (checkManger(arr)) {
+            alert("OK");
+        } else {
+            alert("NO");
+        }
+
+    </script>
+</body>
+</html>

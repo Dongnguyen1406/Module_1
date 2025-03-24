@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhap do dai cua mang");
+    let arr = new Array(number);
+    for (let i = 0; i < number; i++) {
+        arr[i] = +prompt("Nhap phan tu cua mang");
+    }
+    console.log(arr);
+
+    function tongCacUocPhanTu(n){
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+            if (n%i == 0) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+    function mangTongCacUocPhanTu(mang){
+        let ketQua = [];
+        for (let i = 0; i < mang.length; i++) {
+           ketQua[i] = tongCacUocPhanTu(mang[i]);
+        }
+        return ketQua;
+    }
+
+    alert(mangTongCacUocPhanTu(arr));
+
+
+</script>
+</body>
+</html>
