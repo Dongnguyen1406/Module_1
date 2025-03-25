@@ -16,8 +16,29 @@
             mang[i] = +prompt(`Nhập phần từ mảng thứ ${i}`);
         }
         console.log(mang);
-        for (let i = 0; i < mang.length; i++) {
 
+        function laSoChinhPhuong(n){
+            if (n < 1) {
+                return false;
+            }
+            for (let i = 1; i * i <= n ; i++) {
+                if (i * i === n){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        let soChinhPhuong = [];
+        for (let i = 0; i < mang.length; i++) {
+            if (laSoChinhPhuong(mang[i])){
+                soChinhPhuong.push(mang[i]);
+            }
+        }
+        if (soChinhPhuong.length > 0) {
+            alert(`${soChinhPhuong.join(", ")}`);
+        } else {
+            alert("Không có số chính phương nào trong mảng!");
         }
     }
 </script>

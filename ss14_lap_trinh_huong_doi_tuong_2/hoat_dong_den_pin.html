@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class  Battery{
+        constructor(energy) {
+            this.energy = energy;
+        }
+        getEnergy() {
+            return this.energy;
+        }
+        setEnergy(energy) {
+            this.energy = energy;
+        }
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            } else {
+                alert("Khong dung nang luong");
+            }
+        }
+    }
+    class FlashLamp{
+        constructor(battery){
+            this.battery = battery;
+        }
+        getBattery() {
+            return this.battery.getEnergy();
+        }
+        setBattery(battery) {
+            this.battery = battery;
+        }
+        light(){
+            if(flashLamp.getBattery() > 0) {
+                if(this.status) {
+                    alert("Lighting");
+                }
+            } else {
+                alert("khong du nang luong");
+            }
+        }
+        turnOn(){
+            this.status = true;
+            battery.decreaseEnergy();
+        }
+        turnOff(){
+            this.status = false;
+        }
+    }
+
+    let battery = new Battery(2);
+    let flashLamp = new FlashLamp(battery);
+    console.log(`Battery: ${flashLamp.getBattery()} <br>`);
+    flashLamp.light();
+
+    console.log("Turn on " + "<br>");
+    flashLamp.turnOn();
+    flashLamp.light();
+    console.log(`Battery: ${flashLamp.getBattery()} <br>`);
+
+    console.log("Turn off <br>");
+    flashLamp.turnOff();
+    flashLamp.light();
+    console.log(`Battery: ${flashLamp.getBattery()} <br>`);
+
+</script>
+</body>
+</html>

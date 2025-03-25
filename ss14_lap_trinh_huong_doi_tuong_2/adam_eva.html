@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Apple{
+        constructor(weight) {
+            this.weight = weight;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+        decrease(){
+            this.setWeight(--this.weight);
+        }
+        isEmpty(){
+            return this.weight == 0;
+        }
+    }
+    class Human{
+        constructor(name, gender, weight){
+           this.name = name;
+           this.weight = weight;
+        }
+
+        isMale(){
+            return this.gender === "male";
+        }
+
+        getGender() {
+            return this.gender;
+        }
+        setGender(gender) {
+            this.gender = gender;
+        }
+        checkApple(apple){
+            if(apple.getWeight() > 0){
+                console.log(apple.weight);
+            } else {
+                console.log("Đã ăn hết");
+            }
+        }
+        eat(apple){
+            if(apple.weight >0){
+                    this.setWeight(++this.weight);
+                    apple.decrease();
+                    console.log(this.getName() + " " + this.weight);
+                    this.checkApple(apple);
+                }
+        }
+        say(){
+
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        setWeight(weight){
+            this.weight = weight;
+        }
+
+    }
+    let apple = new Apple(10);
+    let human1 = new Human("adam" ,"male", 50);
+    let human2 = new Human("eva" ,"female", 50);
+    while(!apple.isEmpty()){
+        if(apple.getWeight() %2==0) {
+            human1.eat(apple);
+            human1.setGender("male");
+            console.log(human1.isMale());
+
+        }else {
+            human2.eat(apple);
+        }
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhập một chuỗi");
+    let arr = chuoi.split("");
+    let charAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    if(chuoi === "" || chuoi === null){
+        alert("Vui lòng nhập chuỗi hợp lệ!");
+    } else {
+        function checkString(str) {
+            let result = [];
+            let isAlphabet = false;
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === charAlphabet[i])  {
+                    isAlphabet = true;
+                    break;
+                }
+                if (!isAlphabet) {
+                    result.push(str[i]);
+                }
+            }
+            if (result.length === 0) {
+                alert("Chuỗi ký tự đều thuộc alphabet hoặc số");
+            }
+            return result;
+        }
+        alert(checkString(arr));
+    }
+
+
+
+</script>
+</body>
+</html>
