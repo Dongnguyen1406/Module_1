@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Customer {
+        constructor(spentAmount, rank, discount, freeShipping, gift) {
+            this.spentAmount = spentAmount;
+            this.rank = rank;
+            this.discount = discount;
+            this.freeShipping = freeShipping;
+            this.gift = gift;
+        }
+
+        getCustomerRank(spentAmount) {
+            if (spentAmount >= 1000) {
+                this.discount = 20;
+                this.rank = "Platinum";
+                this.freeShipping = true;
+                this.gift = true;
+                if(this.freeShipping == true && this.gift == true) {
+                    return console.log(`${this.rank} ${this.discount}% và miễn phí giao hàng, quà tặng VIP`);
+                }
+            } else if (spentAmount >= 500) {
+                this.discount = 10;
+                this.rank = "Gold";
+                this.freeShipping = true;
+                if(this.freeShipping == true) {
+                    return console.log(`${this.rank} giảm ${this.discount}% và miễn phí giao hàng`);
+                }
+            } else if (spentAmount >= 100) {
+                this.discount = 5;
+                this.rank = "Silver";
+                return console.log(`${this.rank} giảm ${this.discount}% đơn hàng tiếp theo`);
+            } else {
+                this.rank = "Bronze";
+                return console.log(`${this.rank} không có ưu đãi`);
+            }
+        }
+    }
+    let number = +prompt("Nhập vào số tiền đã chi");
+    let customer = new Customer();
+    customer.getCustomerRank(number);
+
+</script>
+</body>
+</html>

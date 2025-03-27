@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let array1 = [1, 2, 3, 4, 5];
+    let array2 = [1, 2, 6, 4, 5];
+    let isValid = true;
+    function check(mang1, mang2) {
+        for (let i = 0; i < mang1.length; i++) {
+            if (mang1[i] !== mang2[i]) {
+                isValid = false;
+                break;
+            }
+        }
+        return isValid;
+    }
+
+    if((check(array1, array2)) === true) {
+        alert("mang 1 trung mang 2")
+    } else {
+        alert("mang 1 khong trung mang 2")
+    }
+
+</script>
+</body>
+</html>

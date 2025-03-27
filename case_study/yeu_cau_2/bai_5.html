@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let menu;
+
+
+    let bill = 0;
+    let soLuongCafe = 0;
+    let soLuongCamVat = 0;
+    let soLuongNuocCaRot = 0;
+    let soLuongNuocCaChua = 0;
+    let soLuongNuocLoc = 0;
+    let soLuongNuocDua = 0;
+    do{
+        let doUongDaChon = "";
+        let soTT = 0;
+
+        if (soLuongCafe > 0) {
+            soTT += 1;
+            doUongDaChon += `${soTT} Cafe: ${soLuongCafe * 10}k  -  số lượng: ${soLuongCafe} ly \n`;
+        }
+        if (soLuongCamVat > 0) {
+            soTT += 1;
+            doUongDaChon += `${soTT} Nước cam: ${soLuongCamVat * 15}k  -  số lượng: ${soLuongCamVat} ly \n`;
+        }
+        if (soLuongNuocCaRot > 0) {
+            soTT += 1;
+            doUongDaChon += `${soTT} Nước ép cà rốt: ${soLuongNuocCaRot * 20}k  -  số lượng: ${soLuongNuocCaRot} ly \n`;
+        }
+        if (soLuongNuocCaChua > 0) {
+            soTT += 1;
+            doUongDaChon += `${soTT} Nước ép cà chua: ${soLuongNuocCaChua * 20}k  -  số lượng: ${soLuongNuocCaChua} ly \n`;
+        }
+        if (soLuongNuocLoc > 0) {
+            soTT += 1;
+            doUongDaChon += `${soTT} Nước lọc: ${soLuongNuocLoc * 5}k  -  số lượng: ${soLuongNuocLoc} ly \n`;
+        }
+        if (soLuongNuocDua > 0) {
+            soTT += 1;
+            doUongDaChon += `${soTT} Nước dừa x: ${soLuongNuocDua * 20}k  -  số lượng: ${soLuongNuocDua} ly \n`;
+        }
+        menu = +prompt(`------------------Menu------------------ \n Hãy số để chọn đồ uống \n1. Cafe: 10k \n2. Cam vắt: 15k \n3. Nước ép cà rốt: 20k \n4. Nước ép cà chua: 20k \n5. Nước lọc: 5k \n6. Nước dừa \n7. Kết thúc \n ----------Danh sách đã chọn---------- \n${doUongDaChon} \n               $ Tổng tiền:  ${bill} k`);
+        switch (menu) {
+            case 1:
+                soLuongCafe += +prompt("Nhập số lượng");
+                bill += 10;
+                break;
+            case 2:
+                soLuongCamVat += +prompt("Nhập số lượng");
+                bill += 15;
+                break;
+            case 3:
+                soLuongNuocCaRot += +prompt("Nhập số lượng");
+                bill += 20
+                break;
+            case 4:
+                soLuongNuocCaChua += +prompt("Nhập số lượng");
+                bill += 20
+                break;
+            case 5:
+                soLuongNuocLoc += +prompt("Nhập số lượng");
+                bill += 20
+                break;
+            case 6:
+                soLuongNuocDua += +prompt("Nhập số lượng");
+                bill += 20
+                break;
+            case 7:
+                alert("ket thuc");
+                break;
+            default:
+                alert("Vui lòng nhập số đồ uống")
+                continue;
+        }
+    }while(menu !== 7);
+
+</script>
+</body>
+</html>

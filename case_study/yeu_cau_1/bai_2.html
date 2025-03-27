@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // let number = +prompt("Nhập vào số nguyên");
+    //     if(number > 0 || number < 999){
+    //         let hangDonVi = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+    //         let hangChucLe = ["mười một", "mười hai", "mười ba", "mười bốn", "mười năm", "mười sáu", "mười bảy", "mười tám", "mười chín"];
+    //         let hangChucChan = ["mười", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi"];
+    //         let hangTramLe = ["một trăm mười một", "một trăm mười hai", "một trăm mười ba", "một trăm mười bốn", "một trăm mười năm", "một trăm mười sáu", "một trăm mười bảy", "một trăm mười tám", "một trăm mười chín"]
+    //         let hanTramChan = ["một trăm", "hai trăm", "ba trăm", "bốn trăm", "năm trăm", "sáu trăm", "bảy trăm", "tám trăm", "chín trăm"];
+    //         if(number < 10){
+    //             document.write(hangDonVi[number]);
+    //         } else if(number > 10 && number < 20){
+    //             document.write(hangChucLe[number-11]); // lấy number - 11 thì sẽ lấy được index trong mảng
+    //         } else if(number > 20 && number < 30){
+    //
+    //         } else if(number % 10 === 0  && number < 100){
+    //             document.write(hangChucChan[(number/10)-1]); // lấy number chia cho 10 và -1 để lấy được index trong mảng
+    //         }  else if(number >= 100 && number % 100 === 0) {
+    //             document.write(hanTramChan[number / 100 - 1]);
+    //         } else if(number > 110 && number < 120){
+    //             document.write(hangTramLe[number-111]);
+    //         }
+    //
+    //     } else {
+    //         alert("không phải số nguyên nhỏ hơn 999")
+    //     }
+
+    let number = +prompt("Nhập vào số nguyên từ 1 đến 999:");
+    if (number > 0 && number < 999) {
+        let hangDonVi = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+        let hangChucLe = ["mười một", "mười hai", "mười ba", "mười bốn", "mười lăm", "mười sáu", "mười bảy", "mười tám", "mười chín"];
+        let hangChucChan = ["mười", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi"];
+        let hangTramChan = ["một trăm", "hai trăm", "ba trăm", "bốn trăm", "năm trăm", "sáu trăm", "bảy trăm", "tám trăm", "chín trăm"];
+
+        let tram = Math.floor(number / 100);  // Lấy hàng trăm
+        let chuc = Math.floor((number % 100) / 10);  // Lấy hàng chục
+        let donvi = number % 10;  // Lấy hàng đơn vị
+
+        let result = "";
+
+        // Xử lý hàng trăm
+        if (tram > 0) {
+            result += hangTramChan[tram - 1]; // VD: 300 => "ba trăm"
+        }
+
+        // Xử lý hàng chục và đơn vị
+        let lastTwoDigits = number % 100; // Lấy 2 chữ số cuối cùng
+
+        if (lastTwoDigits > 10 && lastTwoDigits < 20) {
+            result += (tram > 0 ? " " : "") + hangChucLe[lastTwoDigits - 11]; // VD: 115 => "một trăm mười lăm"
+        } else {
+            if (chuc > 0) {
+                result += (tram > 0 ? " " : "") + hangChucChan[chuc - 1]; // VD: 90 => "chín mươi"
+            }
+            if (donvi > 0) {
+                result += (chuc > 0 ? " " : "") + hangDonVi[donvi]; // VD: 45 => "bốn mươi lăm"
+            }
+        }
+
+        document.write(result);
+    } else {
+        alert("Vui lòng nhập số nguyên từ 1 đến 998.");
+    }
+
+
+</script>
+</body>
+</html>

@@ -51,12 +51,12 @@
             if(apple.weight >0){
                     this.setWeight(++this.weight);
                     apple.decrease();
-                    console.log(this.getName() + " " + this.weight);
+                    console.log(this.getName() + ": " + this.weight);
                     this.checkApple(apple);
                 }
         }
-        say(){
-
+        say(sentence){
+            console.log(`${this.getName()} ${sentence}`);
         }
         getName(){
             return this.name;
@@ -75,22 +75,19 @@
     let apple = new Apple(10);
     let human1 = new Human("adam" ,"male", 50);
     let human2 = new Human("eva" ,"female", 50);
+    human1.say("Hello");
+    human2.say("Hi");
     while(!apple.isEmpty()){
         if(apple.getWeight() %2==0) {
             human1.eat(apple);
-            human1.setGender("male");
-            console.log(human1.isMale());
+            human1.say("Tôi đã ăn trước tới lượt bạn");
+
 
         }else {
             human2.eat(apple);
+            human2.say("oke");
         }
     }
-
-
-
-
-
-
 
 </script>
 </body>

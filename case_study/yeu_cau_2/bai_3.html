@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let numerators = [5,2,5];
+    let denominators = [6,3,4];
+    let result = [];
+    let maxFraction = 0;
+    for (let i=0;i<numerators.length;i++) {
+        let maxFraction = numerators[i]/denominators[i];
+        result.push(maxFraction);
+    }
+    let index = 0;
+    for (let i=0;i<result.length;i++) {
+        if(result[i] > maxFraction) {
+            index = i;
+            maxFraction = result[i];
+        }
+    }
+    console.log(`${maxFraction} với chỉ số là ${index}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let mangA = [7,2,5,3,5,3,8,9];
+    let mangB = [7,2,5,4,6,3,5,3,4,6];
+    let copyMangA = [...mangA];
+    let missingValue = [];
+    let result = [];
+    for(let i=0;i<mangB.length;i++) {
+        index = copyMangA.indexOf(mangB[i]);
+        if(index !== -1) {
+            copyMangA.splice(index, 1);
+        } else {
+            if(!missingValue.includes(mangB[i])) {
+                missingValue.push(mangB[i]);
+            }
+        }
+    }
+    console.log(missingValue);
+</script>
+</body>
+</html>

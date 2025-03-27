@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let string = prompt("Nhập một chuỗi");
+    let number = "0123456789";
+    let index = string.indexOf("@");
+    let mangDau = string.slice(0, index);
+    let mangSau = string.slice(index + 1);
+    if (index !== -1) {
+        console.log("mangDau:", mangDau);
+        console.log("mangSau:", mangSau);
+    } else {
+        console.log("Không có '@' trong chuỗi!");
+    }
+
+    if (mangDau.length >= 6) {
+        for (let i=0; i<mangDau.length; i++) {
+            
+        }
+    } else {
+        alert("Phía trước @ phải đủ 6 ký tự");
+    }
+
+</script>
+</body>
+</html>
