@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhập độ dài mảng");
+    if (number <= 0 && number > 50) {
+        alert("Vui lòng nhập độ dài mảng nhỏ hơn hoặc bằng 50!");
+    } else {
+        let array = new Array(number);
+        let arrEven = [];
+        let arrOdd = [];
+        let sumEven = 0;
+        let sumOdd = 0;
+        for (let i = 0; i < number; i++) {
+            array[i] = +prompt(`Nhập phần tử mảng thứ ${i}`);
+        }
+        document.write(array + "<br>");
+        for (let i = 0; i < array.length; i++) {
+            if (i % 2 === 0) {
+                arrEven.push(array[i]);
+            }
+        }
+        document.write(arrEven + "<br>");
+        for (let i = 0; i < array.length; i++) {
+            if (i % 2 !== 0) {
+                arrOdd.push(array[i]);
+            }
+        }
+        for (let i = 0; i < arrOdd.length; i++) {
+            sumOdd += arrOdd[i];
+        }
+        for (let i = 0; i < arrEven.length; i++) {
+            sumEven += arrEven[i];
+        }
+        document.write(arrOdd + "<br>");
+       let result = sumEven - sumOdd;
+       document.write(`${sumEven} - ${sumOdd} = ${result}`);
+    }
+
+</script>
+</body>
+</html>

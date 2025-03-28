@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhập vào một chuỗi");
+    if(chuoi.includes("") && chuoi.includes(" ")){
+        alert("Chuỗi chứa khoảng trắng vui lòng nhập lại");
+    }
+    function checkChuoi(str) {
+        let kyTuThuong = 0;
+        let kyTuHoa = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === str[i].toLowerCase() && str[i].trim) {
+                kyTuThuong++;
+            } else {
+                kyTuHoa++;
+            }
+        }
+        return console.log(`[${kyTuHoa}, ${kyTuThuong}]`);
+    }
+
+    console.log(checkChuoi(chuoi));
+</script>
+</body>
+</html>

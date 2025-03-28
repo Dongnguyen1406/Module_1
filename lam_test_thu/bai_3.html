@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhập vào độ dài mảng");
+    if (number <= 0) {
+        alert("Vui lòng nhập độ dài mảng lớn hơn 0");
+    } else {
+        let array = new Array(number);
+        for (let i = 0; i < array.length; i++) {
+            array[i] = +prompt(`Nhập phần tử mảng thứ ${i}`);
+        }
+        function checkArrayFibonaci(arr) {
+            let number1 = 0;
+            let number2 = 1;
+            let array2 = [0];
+            let arrayFibonaci = [];
+            for (let i = 0; i <= 1000; i++) {
+                let sum = number1 + number2;
+                number1= number2;
+                number2 = sum;
+                array2.push(number1);
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                let index = array2.indexOf(arr[i]);
+                if (index !== -1) {
+                    arrayFibonaci.push(arr[i]);
+                }
+            }
+
+           return arrayFibonaci.sort((a,b)=>a-b);
+        }
+
+        console.log(checkArrayFibonaci(array));
+    }
+</script>
+</body>
+</html>

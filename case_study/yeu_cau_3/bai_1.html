@@ -8,24 +8,67 @@
 <body>
 <script>
     let string = prompt("Nhập một chuỗi");
-    let number = "0123456789";
+    let isNumber = "0123456789";
     let index = string.indexOf("@");
     let mangDau = string.slice(0, index);
     let mangSau = string.slice(index + 1);
-    if (index !== -1) {
-        console.log("mangDau:", mangDau);
-        console.log("mangSau:", mangSau);
-    } else {
-        console.log("Không có '@' trong chuỗi!");
+
+    function tachChuoi(str) {
+        if (index !== -1) {
+            console.log("mangDau:", mangDau);
+            console.log("mangSau:", mangSau);
+        } else {
+            console.log("Không có '@' trong chuỗi!");
+        }
     }
 
-    if (mangDau.length >= 6) {
-        for (let i=0; i<mangDau.length; i++) {
-            
+    function checkChuoiDau(str) {
+        if (str.length >= 6) {
+            if (isNaN(str[0])) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
         }
-    } else {
-        alert("Phía trước @ phải đủ 6 ký tự");
     }
+
+    function checkChuoiSau(str) {
+        let index = str.indexOf(".");
+        let chuoiSauTruoc = str.slice(0, index);
+        let chuoiSauSau = str.slice(index + 1);
+        console.log("chuoiSauTruoc:", chuoiSauTruoc);
+        console.log("chuoiSauSau:", chuoiSauSau);
+        let okeTruoc = true;
+        let okeSau = true;
+        if (chuoiSauTruoc.length >= 3 && chuoiSauTruoc.length <= 10) {
+            okeTruoc = true;
+        } else {
+            okeTruoc = false;
+        }
+        if (chuoiSauSau.length >= 3 && chuoiSauSau.length <= 10) {
+            okeSau = true;
+        } else {
+            okeSau = false;
+        }
+        if (okeTruoc === true && okeSau === true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    tachChuoi(string);
+    if (checkChuoiDau(mangDau) === true && checkChuoiSau(mangSau) === true) {
+        alert("Day la email dung");
+    } else {
+        alert("Day la email sai");
+    }
+
+
+
+
+
 
 </script>
 </body>

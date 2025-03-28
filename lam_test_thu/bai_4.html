@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<h2>Add New Computer</h2>
+<div class="top">
+    <input type="text" placeholder="New Computer" id="nameComputer">
+    <input type="text" placeholder="Brand Computer" id="brandComputer">
+    <input type="text" placeholder="Price Computer" id="priceComputer">
+    <input type="button" onclick="managerComputer.addComputer()" value="Add">
+</div>
+<div class="bottom">
+    <h2>Display All Computer</h2>
+    <div class="title">
+    </div>
+    <p id="computerList"></p>
+</div>
+<script>
+    class Computer {
+        constructor(id, name, nameBrand, price) {
+            this.id = id;
+            this.name = name;
+            this.nameBrand = nameBrand;
+            this.price = price;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        getNameBrand() {
+            return this.nameBrand;
+        }
+
+        setNameBrand(nameBrand) {
+            this.nameBrand = nameBrand;
+        }
+    }
+
+    class ManagerComputer {
+        constructor() {
+            this.computer = [];
+            this.idIncreasing = 1;
+        }
+
+        addComputer() {
+            let nameComputer = document.getElementById('nameComputer').value;
+            let brandComputer = document.getElementById('brandComputer').value;
+            let priceComputer = document.getElementById('priceComputer').value;
+            if (nameComputer.trim() === "") {
+                alert("Please enter a computer name");
+            } else {
+                let computerName = new Computer(this.idIncreasing++, nameComputer, brandComputer, priceComputer);
+                this.computer.push(computerName);
+                document.getElementById("nameComputer").value = "";
+                document.getElementById("brandComputer").value = "";
+                document.getElementById("priceComputer").value = "";
+                this.displayProduct(this.computer);
+
+            }
+
+        }
+
+        displayProduct() {
+            let computerList = `<table>
+                           `;
+            for (let i = 0; i < this.computer.length; i++) {
+                computerList += `<tr>
+                                <td width="400px">${this.computer[i].getId()}</td>
+                                <td width="400px">${this.computer[i].getName()}</td>
+                                 <td width="400px">${this.computer[i].getNameBrand()}</td>
+                                 <td width="400px">${this.computer[i].getPrice()}</td>
+                             </tr>`;
+            }
+            computerList += "</table>";
+            document.getElementById("computerList").innerHTML = computerList;
+        }
+    }
+
+    const managerComputer = new ManagerComputer();
+</script>
+</body>
+</html>
